@@ -1,7 +1,7 @@
 <template>
     <v-app>
       <v-navigation-drawer permanent app>
-        <Index />
+        <Menu />
       </v-navigation-drawer>
       <v-main>
         <v-container fluid>
@@ -116,11 +116,11 @@
   </template>
   
   <script>
-  import Index from "../javaScriptPage/index.vue";
+  import Menu from "@/pages/javaScriptPage/menu.vue";
   
   export default {
     components: {
-      Index
+      Menu
     }
   };
   </script>
