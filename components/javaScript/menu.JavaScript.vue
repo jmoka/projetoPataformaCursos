@@ -38,7 +38,7 @@ export default {
       lista: [
         {
           id: 1,
-          name: "Introdução",
+          name: "Introdução ao JavaScript",
           page: "",
           open: true,
           subItems: [
@@ -50,21 +50,43 @@ export default {
             {
               id: 2,
               name: "O que é JavaScript?",
-              page: "/javaScriptPage/o-que-e-javascript"
+              page: "/javaScriptPage/OQueEjavascript"
             },
             {
               id: 3,
               name: "História e Evolução",
-              page: "/javaScriptPage/historia-e-evolucao"
+              page: "/javaScriptPage/historiaEvolucao"
             }
           ]
         },
         {
           id: 2,
-          name: "História",
-          page: "/historia",
+          name: "Sintaxe e Tipos de Dados",
+          page: "",
           open: true,
-          subItems: [] // Adicione um array vazio para manter a estrutura
+          subItems: [
+          {
+              id: 1,
+              name: "Sintax Básica",
+              page: "/javaScriptPage/sintax"
+            },
+            {
+              id: 2,
+              name: "Tipos de Dados Primitivos",
+              page: "/javaScriptPage/dadosPrimitivos"
+            },
+            {
+              id: 3,
+              name: "Tipos de Dados Complexos",
+              page: "/javaScriptPage/dadosComplexos"
+            },
+            {
+              id: 4,
+              name: "Conversão de Tipos",
+              page: "/javaScriptPage/conversaoTipos"
+            },
+           
+          ] 
         },
         {
           id: 3,

@@ -14,7 +14,7 @@
 </template>
 <script>
 import LgoJS from "@/components/logoJSCapa.vue"
-import Menu from "@/pages/javaScriptPage/menu.vue"
+import Menu from "@/components/javaScript/menu.JavaScript.vue"
 export default {
   name: "Index",
   data() {

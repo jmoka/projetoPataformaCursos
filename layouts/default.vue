@@ -58,10 +58,7 @@ export default {
 </script>
 
 <style scoped>
-.corFundoBarra {
-  background-color: transparent !important;
-  width: 100%;
-}
+
 .no-wrap {
   white-space: nowrap;
 }
