@@ -55,7 +55,7 @@ export default {
             {
               id: 3,
               name: "História e Evolução",
-              page: "/javaScriptPage/historiaEvolucao"
+              page: "/javaScriptPage/historiaJS"
             }
           ]
         },
