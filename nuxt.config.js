@@ -42,7 +42,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    '@nuxtjs/vuetify',
+  
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -54,31 +54,37 @@ export default {
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
-    
     theme: {
-      dark: false, // Tema claro por padrão
+      dark: false, // Define o tema padrão como claro
       themes: {
-        dark: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
+        light: {
+          primary: colors.orange.darken1,
+          secondary: '#894200',
+          background: '#7a7a7a',
+          accent: '#61ce70',
+          black: '#000000',
+          white: '#FFFFFF',
           info: colors.teal.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
           success: colors.green.accent3
         },
-        light: {
-          primary: colors.blue.base,
-          accent: colors.grey.base,
-          secondary: colors.amber.base,
-          info: colors.teal.accent2,
-          warning: colors.amber.accent3,
-          error: colors.deepOrange.accent1,
-          success: colors.green.accent2
+        dark: {
+          primary: '#E38108',
+          secondary: '#894200',
+          background: '#7a7a7a',
+          accent: '#61ce70',
+          black: '#000000',
+          white: '#FFFFFF',
+          info: colors.teal.darken1,
+          warning: colors.amber.darken3,
+          error: colors.deepOrange.lighten4,
+          success: colors.green.lighten3
         }
       }
     }
   },
+
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

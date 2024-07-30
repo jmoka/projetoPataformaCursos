@@ -1,6 +1,5 @@
 <template>
-  <v-app :class="isDarkTheme">
- 
+  <v-app> 
     <v-container fliuid>
       <v-row>   
         <v-col cols="12" class="d-flex justify-center">          
@@ -24,7 +23,6 @@
     </v-container>
   </v-app>
 </template>
-
 <script>
 import LogoJS from '../components/logoJSCapa.vue';
 import LogoVue from '../components/logovue.vue';

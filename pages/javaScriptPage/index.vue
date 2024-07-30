@@ -1,5 +1,5 @@
 <template>
-  <v-app class="theme--dark">
+    <v-app>
     <v-layout>
       <v-navigation-drawer permanent v-model="drawer">
         <Menu />
