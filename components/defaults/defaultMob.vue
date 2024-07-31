@@ -4,8 +4,7 @@
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>Menu dos Cursos</v-toolbar-title>
       <v-spacer></v-spacer>
-    <v-btn icon="mdi-dots-vertical" variant="text"></v-btn>
-    </v-app-bar>
+   </v-app-bar>
 
     <v-navigation-drawer v-model="drawer" app >
       <v-card text-right class="pa-0">
@@ -19,11 +18,11 @@
           <v-expansion-panels>
             <v-expansion-panel v-for="item in cursos" :key="item.id">
               <v-expansion-panel-header>
-                <template v-slot:prepend>
-                  <v-avatar left>
-                    <img src="https://cdn.vuetifyjs.com/images/john.png" alt="avatar">
+                <v-contaiiner>
+                  <v-avatar :size="size" rounded="circle">
+                   <v-img :src='item.src'></v-img>
                   </v-avatar>
-                </template>
+                </v-contaiiner>               
                 <span>{{ item.name }}</span>
               </v-expansion-panel-header>
               <v-expansion-panel-content>
@@ -44,25 +43,80 @@
 
 <script>
 import Logo from '@/components/logoJota.vue';
+
+
+
 export default {
   name: 'defaultPC',
   components:{
-    Logo
+    Logo    
   },
   data() {
     return {
       drawer: false,
       isDarkTheme: false,
+      size:{
+          type:[Number, String],
+          default:64
+      },
       cursos: [
-        { id: 1, name: 'Java Script', to: '/javaScriptPage' },
-        { id: 2, name: 'CSS', to: '/cssPage' },
-        { id: 3, name: 'HTML', to: '/htmlPage' },
-        { id: 4, name: 'Node', to: '/nodePage' },
-        { id: 5, name: 'Vue.js', to: '/vuePage' },
-        { id: 6, name: 'Vuetify', to: '/vuetifyPage' },
-        { id: 7, name: 'Vuex', to: '/vuexPage' },
-        { id: 8, name: 'Nuxt', to: '/nuxtPage' },
-        { id: 9, name: 'Docker', to: '/dockerPage' },
+        { id: 1, 
+          name: 'Java Script', 
+          to: '/javaScriptPage', 
+          icon:'j', 
+          src:"/icoJota50.png"   
+        },
+        { id: 2,
+          name: 'CSS', 
+          to: '/cssPage', 
+          icon:'c', 
+          src:"/vv.png"   
+       },
+        { id: 3, 
+          name: 'HTML', 
+          to: '/htmlPage', 
+          icon:'h', 
+          src:"/icoJota50.png"   
+          },
+        { id: 4, 
+          name: 'Node', 
+          to: '/nodePage', 
+          icon:'n', 
+          src:"/icoJota50.png"   
+        },
+        { id: 5, 
+          name: 'Vue.js', 
+          to: '/vuePage', 
+          icon:'v', 
+          src:"/icoJota50.png"   
+        },
+        { 
+          id: 6, 
+          name: 'Vuetify', 
+          to: '/vuetifyPage', 
+          icon:'vt', 
+          src:"/icoJota50.png"   
+         },
+        { id: 7, 
+          name: 'Vuex', 
+          to: '/vuexPage', 
+          icon:'vx', 
+          src:"/icoJota50.png"   
+          },
+        { 
+          id: 8, 
+          name: 'Nuxt', 
+          to: '/nuxtPage' , 
+          icon:'nx', 
+          src:"/icoJota50.png"   
+        },
+        { 
+          id: 9, 
+          name: 'Docker', 
+          to: '/dockerPage', 
+          icon:'d', 
+          src:"/icoJota50.png"   
+         },
       ],
     };
   },
@@ -83,6 +137,11 @@ export default {
 </script>
 
 <style scoped>
+.circle{
+  border-radius: 50%;
+  overflow:hidden
+
+}
 .toolbar-title {
   background-color: #E38018; /* Define a cor de fundo como primary */
   color: white; /* Define a cor do texto como branca para contraste */
