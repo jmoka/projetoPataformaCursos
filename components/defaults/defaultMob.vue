@@ -1,33 +1,33 @@
 <template>
   <v-app>
-    <v-app-bar color="primary" app>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-toolbar-title>Menu dos Cursos</v-toolbar-title>
+    <v-app-bar app >
+      <v-app-bar-nav-icon class="fundoIcon" @click.stop="drawer = !drawer" ></v-app-bar-nav-icon>
+      <v-toolbar-title class="textColor"> Menu dos Cursos</v-toolbar-title>
       <v-spacer></v-spacer>
    </v-app-bar>
 
     <v-navigation-drawer v-model="drawer" app >
       <v-card text-right class="pa-0">
-        <Logo/>
+        <Logo />
         <v-card-subtitle class="text-right pt-0">
             Cursos On-Line
-          </v-card-subtitle>
+         </v-card-subtitle>
       </v-card>      
-      <v-container>
-        <v-card>
+      <v-container class="full">
+        <v-card >
           <v-expansion-panels>
             <v-expansion-panel v-for="item in cursos" :key="item.id">
               <v-expansion-panel-header>
                 <v-contaiiner>
-                  <v-avatar :size="size" rounded="circle">
+                  <v-avatar>
                    <v-img :src='item.src'></v-img>
                   </v-avatar>
                 </v-contaiiner>               
-                <span>{{ item.name }}</span>
+                <span class="textColor">{{ item.name }}</span>
               </v-expansion-panel-header>
-              <v-expansion-panel-content>
-                <nuxt-link :to="item.to">Go to {{ item.name }} page</nuxt-link>
-              </v-expansion-panel-content>
+              <v-expansion-panel-content class="full">
+                <MenuJs v-if="item.name==='Java Script'" class="full" />       
+              </v-expansion-panel-content>            
             </v-expansion-panel>
           </v-expansion-panels>
         </v-card>
@@ -43,79 +43,87 @@
 
 <script>
 import Logo from '@/components/logoJota.vue';
+import MenuJs from '@/components/javaScript/menu.JavaScript.vue'
 
 
 
 export default {
   name: 'defaultPC',
   components:{
-    Logo    
+    Logo ,
+    MenuJs 
   },
   data() {
     return {
       drawer: false,
-      isDarkTheme: false,
-      size:{
-          type:[Number, String],
-          default:64
-      },
+      isDarkTheme: false,        
       cursos: [
         { id: 1, 
           name: 'Java Script', 
           to: '/javaScriptPage', 
           icon:'j', 
-          src:"/icoJota50.png"   
+          src:"/icon/js.png" ,
+        
+
         },
         { id: 2,
           name: 'CSS', 
           to: '/cssPage', 
           icon:'c', 
-          src:"/vv.png"   
+          src:"/icon/css.png",
+          
        },
         { id: 3, 
           name: 'HTML', 
           to: '/htmlPage', 
           icon:'h', 
-          src:"/icoJota50.png"   
+          src:"/icon/html.png",
+         
           },
         { id: 4, 
           name: 'Node', 
           to: '/nodePage', 
           icon:'n', 
-          src:"/icoJota50.png"   
+          src:"/icon/node.png" ,
+         
         },
         { id: 5, 
           name: 'Vue.js', 
           to: '/vuePage', 
           icon:'v', 
-          src:"/icoJota50.png"   
+          src:"/icon/vue.png",
+           
         },
         { 
           id: 6, 
           name: 'Vuetify', 
           to: '/vuetifyPage', 
           icon:'vt', 
-          src:"/icoJota50.png"   
+          src:"/icon/vuetify.png",
+            
          },
         { id: 7, 
           name: 'Vuex', 
           to: '/vuexPage', 
           icon:'vx', 
-          src:"/icoJota50.png"   
+          src:"/icon/vuex.png" ,
+         
           },
         { 
           id: 8, 
           name: 'Nuxt', 
           to: '/nuxtPage' , 
           icon:'nx', 
-          src:"/icoJota50.png"   
+          src:"/icon/nuxt.png",
+            
         },
         { 
           id: 9, 
           name: 'Docker', 
           to: '/dockerPage', 
           icon:'d', 
-          src:"/icoJota50.png"   
+          src:"/icon/docker.png",
+       
          },
       ],
     };
@@ -137,18 +145,17 @@ export default {
 </script>
 
 <style scoped>
-.circle{
-  border-radius: 50%;
-  overflow:hidden
+.full {
+  margin:0 !important;
+  padding: 0 !important;
+}
+.textColor {
+  color:#E38108;
+}
+.fundoIcon {
+  
+  background-color: #E38108;
+}
 
-}
-.toolbar-title {
-  background-color: #E38018; /* Define a cor de fundo como primary */
-  color: white; /* Define a cor do texto como branca para contraste */
-  padding: 16px; /* Adiciona padding em todos os lados */
-  text-align: center;
-  height: 100%; /* Faz com que o título ocupe a altura total do app-bar */
-  display: flex;
-  align-items: center; /* Alinha o texto verticalmente ao centro */
-}
+
 </style>
