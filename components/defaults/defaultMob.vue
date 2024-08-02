@@ -4,6 +4,10 @@
       <v-app-bar-nav-icon class="fundoIcon" @click.stop="drawer = !drawer" ></v-app-bar-nav-icon>
       <v-toolbar-title class="textColor"> Menu dos Cursos</v-toolbar-title>
       <v-spacer></v-spacer>
+      <v-col class="d-flex justify-center align-center">
+          <v-switch class="pt-5" v-model="isDarkTheme" label="Dark"></v-switch>
+      </v-col>
+      
    </v-app-bar>
 
     <v-navigation-drawer v-model="drawer" app >
