@@ -1,18 +1,18 @@
 <template >
   <v-app >     
-    <v-card>
-      <v-card-title ><b>Menu</b></v-card-title>
+    <v-card class="TextMenu">
+      <v-card-title ><b>Menu JS</b></v-card-title>
     </v-card>  
     
     <v-expansion-panels >
       <v-expansion-panel v-for="item in lista" :key="item.id">
         <v-expansion-panel-header >              
-          <b>{{ item.name }}</b>          
+          <b class="TextItens">{{ item.name }}</b>          
         </v-expansion-panel-header>
         <!-- Subitens -->
         <v-expansion-panel-content  v-if="item.open">
           <v-list-item-group>
-            <v-list-item class="full" v-for="subItem in item.subItems" :key="subItem.id">
+            <v-list-item class="full secundary" v-for="subItem in item.subItems" :key="subItem.id">
               <nuxt-link :to="subItem.page">
                 {{ subItem.name }}
               </nuxt-link>
@@ -76,9 +76,16 @@ export default {
 </script>
 
 <style scoped>
-.subitens {
-  width: 200px
-  
+.TextMenu {
+
+ background-color: #E38108;
+}
+.TextItens {
+ color:#894200;  
+}
+
+.TextSubItens {
+ color:Black;  
 }
 .full {
   margin:0 !important;

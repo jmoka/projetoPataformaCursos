@@ -268,7 +268,13 @@ console.log(pessoa); // Saída: { nome: "Maria", idade: 30 }
 
 <style scoped>
 .v-main {
-    padding: 10px 10px 10px 10px !important; /* Ajuste o padding conforme necessário */
+    padding: 10px 20px 10px 20px !important; /* Ajuste o padding conforme necessário */
+}
+h2 {
+  color: #E38108
+}
+h5 {
+  color: #894200
 }
 
 .code-container {
@@ -279,7 +285,7 @@ console.log(pessoa); // Saída: { nome: "Maria", idade: 30 }
 pre {
     white-space: pre-wrap; /* Faz o código quebrar linhas se necessário */
     word-wrap: break-word; /* Quebra palavras longas para ajustar ao container */
-     /* Fundo claro para melhor visualização do código */
+   
     padding: 10px; /* Adiciona algum espaçamento interno */
     border-radius: 4px; /* Bordas arredondadas para um visual mais agradável */
     max-width: 100%; /* Garante que o pre não ultrapasse o tamanho do container */

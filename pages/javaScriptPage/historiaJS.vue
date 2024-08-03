@@ -1,6 +1,6 @@
 <template>
     <v-app>
-        <v-navigation-drawer permanent app>
+        <v-navigation-drawer app>
         <Menu />
       </v-navigation-drawer>
         <v-main>
@@ -116,14 +116,15 @@
            <ul>
                 <li>
                     <p>O ecossistema JavaScript expandiu-se com a criação de várias bibliotecas e frameworks populares, como:</p>
-                    <pre>
-                        - jQuery
-                        - Angular
-                        - React
-                        - Vue.js
-
-                    </pre>
+                    <ul>
+                       <li>jQuery</li>
+                       <li>Angular</li>
+                       <li>Angular</li>
+                       <li>React</li>
+                       <li>Vue.js</li>           
+                    </ul>
                 </li>
+                <br>
                 <li>
                     <p>Ferramentas de build e gerenciamento de pacotes como <b>Node.js</b>, <b>npm</b> (Node Package Manager), <b>Webpack</b>, e <b>Babel</b> são 
                         amplamente usadas</p>
@@ -175,6 +176,13 @@ import Menu from '@/components/javaScript/menu.JavaScript.vue'
 
 <style scoped>
  .v-main {
-     padding: 10px 20px 10px 50px !important; /* Ajuste o padding conforme necessário */
+     padding: 10px 20px 10px 20px !important; /* Ajuste o padding conforme necessário */
  }
+ h1, h2, hr {
+  color: #E38108
+}
+h3 {
+  color: #894200
+}
+
 </style>
