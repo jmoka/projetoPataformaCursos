@@ -3,8 +3,8 @@
     <v-card class="TextMenu">
       <v-card-title ><b>Menu JS</b></v-card-title>
     </v-card>  
-    
-    <v-expansion-panels >
+    <v-container>
+      <v-expansion-panels >
       <v-expansion-panel v-for="item in lista" :key="item.id">
         <v-expansion-panel-header >              
           <b class="TextItens">{{ item.name }}</b>          
@@ -21,6 +21,9 @@
         </v-expansion-panel-content>
       </v-expansion-panel>
     </v-expansion-panels>
+
+    </v-container>
+ 
   </v-app>
 </template>
 
@@ -37,9 +40,9 @@ export default {
           page: "",
           open: true,
           subItems: [
-            { id: 1, name: "Vamos Iniciar", page: "/javaScriptPage/introducao" },
-            { id: 2, name: "JavaScript?", page: "/javaScriptPage/OQueEjavascript" },
-            { id: 3, name: "História e Evolução", page: "/javaScriptPage/historiaJS" }
+            { id: 1, name: "Vamos Iniciar", page: "/javaScriptPage/introducao/introducao" },
+            { id: 2, name: "JavaScript?", page: "/javaScriptPage/introducao/OQueEjavascript" },
+            { id: 3, name: "História e Evolução", page: "/javaScriptPage/introducao/historiaJS" }
           ]
         },
         {
@@ -48,10 +51,10 @@ export default {
           page: "",
           open: true,
           subItems: [
-            { id: 1, name: "Sintaxe Básica", page: "/javaScriptPage/sintax" },
-            { id: 2, name: "Dados Primitivos", page: "/javaScriptPage/dadosPrimitivos" },
-            { id: 3, name: "Dados Complexos", page: "/javaScriptPage/dadosComplexos" },
-            { id: 4, name: "Conversão de Tipos", page: "/javaScriptPage/conversaoTipos" }
+            { id: 1, name: "Sintaxe Básica", page: "/javaScriptPage/sintax_TiposDados/sintaxBasica" },
+            { id: 2, name: "Dados Primitivos", page: "/javaScriptPage/sintax_TiposDados/dadosPrimitivos" },
+            { id: 3, name: "Dados Complexos", page: "/javaScriptPage/sintax_TiposDados/dadosComplexos" },
+            { id: 4, name: "Conversão de Tipos", page: "/javaScriptPage/sintax_TiposDados/ConversaoDeTipos" }
           ] 
         },
         {

@@ -8,8 +8,8 @@
   </v-app>
 </template>
 <script>
-import DafaultPC from "@/components/defaults/defaultPC.vue"
-import DafaultMob from "@/components/defaults/defaultMob.vue"
+import DafaultPC from "@/components/layouts/defaultPC.vue"
+import DafaultMob from "@/components/layouts/defaultMob.vue"
 export default {  
   components: {   
     DafaultPC,

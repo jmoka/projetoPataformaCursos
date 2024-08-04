@@ -19,8 +19,8 @@
   
   <style scoped>
   .img {
-    width: 400px;  /* Ajuste para a largura desejada */
-    height: 400px;  /* Mantém a proporção da altura com base na largura */
+    width: 100%;  /* Ajuste para a largura desejada */
+    height:auto;  /* Mantém a proporção da altura com base na largura */
   }
   </style>
   
