@@ -5,3 +5,40 @@
     background-color: transparent !important;
     width: 100%;
   }
+
+p {
+    text-align: justify;
+}
+
+h1 {
+  color: #E38108
+}
+
+h2 {
+    color: #E38108
+}
+h3 {
+  color: #894200
+}
+
+h4 {
+  color: #E38108
+}
+
+h5 {
+  color: #894200
+}
+.flex {
+    display: flex;
+    justify-content: center
+}
+
+iframe {
+    width: 100%; 
+    height: 100%;
+}
+
+.flex {
+  display: flex;
+  justify-content: center; 
+}

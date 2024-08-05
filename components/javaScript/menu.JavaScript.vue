@@ -1,18 +1,23 @@
 <template >
   <v-app >     
     <v-card class="TextMenu">
-      <v-card-title ><b>Menu JS</b></v-card-title>
-    </v-card>  
+      <v-card-title ><b>Menu JS</b></v-card-title>  
+    </v-card> 
+    <v-card>   
+       <v-card-subtitle class="text-red-darken-1">
+        <nuxt-link :to=Indice><b>Índeces</b></nuxt-link>
+      </v-card-subtitle>
+    </v-card> 
     <v-container>
       <v-expansion-panels >
       <v-expansion-panel v-for="item in lista" :key="item.id">
         <v-expansion-panel-header >              
-          <b class="TextItens">{{ item.name }}</b>          
+          <b >{{ item.name }}</b>          
         </v-expansion-panel-header>
         <!-- Subitens -->
         <v-expansion-panel-content  v-if="item.open">
           <v-list-item-group>
-            <v-list-item class="full secundary" v-for="subItem in item.subItems" :key="subItem.id">
+            <v-list-item class="full" v-for="subItem in item.subItems" :key="subItem.id">
               <nuxt-link :to="subItem.page">
                 {{ subItem.name }}
               </nuxt-link>
@@ -33,6 +38,7 @@ export default {
   name: "Index",
   data() {
     return {
+      Indice: "/javaScriptPage/introducao/indeces",
       lista: [
         {
           id: 1,
@@ -40,9 +46,10 @@ export default {
           page: "",
           open: true,
           subItems: [
-            { id: 1, name: "Vamos Iniciar", page: "/javaScriptPage/introducao/introducao" },
-            { id: 2, name: "JavaScript?", page: "/javaScriptPage/introducao/OQueEjavascript" },
-            { id: 3, name: "História e Evolução", page: "/javaScriptPage/introducao/historiaJS" }
+            { id: 1, name: "JavaScript?", page: "/javaScriptPage/introducao/OQueEjavascript"},
+            { id: 2, name: "História e Evolução", page: "/javaScriptPage/introducao/historiaJS"},
+            { id: 3, name: "Instalação", page: "/javaScriptPage/introducao/instalacaoJS"},
+            { id: 4, name: "Primeiro Script", page: "/javaScriptPage/introducao/primeiroScript"}
           ]
         },
         {

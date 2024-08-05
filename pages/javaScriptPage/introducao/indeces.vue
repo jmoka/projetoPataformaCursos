@@ -11,6 +11,17 @@
               <h1>Introdução ao JavaScript</h1>
               <p class="justficar">Bem-vindo ao curso de Introdução ao JavaScript! Neste curso, você começará sua jornada no desenvolvimento web com uma das linguagens de programação mais populares e versáteis do mundo. JavaScript é essencial para criar sites interativos e dinâmicos e é amplamente utilizado em desenvolvimento front-end e back-end.</p>
               
+              <v-container class="flex" >
+                <v-responsive :aspect-ratio="16 / 9" class="flexItem">
+                    <iframe 
+                        :src='video'
+                        :allow='propriedadesVideo'
+                        allowfullscreen                        
+                        >
+                    </iframe>
+                 </v-responsive>
+             </v-container>      
+
               <h2>O que você aprenderá:</h2>
               
               <h2><strong>1. Introdução ao JavaScript</strong></h2>
@@ -142,7 +153,9 @@ import MenuJs from "@/components/javaScript/menu.JavaScript.vue";
 export default {
   data() {
     return {
-      isDark: true
+      isDark: true,
+      video: 'https://www.youtube.com/embed/VIDEO_ID',
+      propriedadesVideo: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
     };
   },
   components: {
@@ -152,14 +165,13 @@ export default {
 </script>
 
 <style scoped>
-.v-main {
-  padding: 10px 20px 10px 20px !important; /* Ajuste o padding conforme necessário */
+ .v-main {
+     padding: 10px 20px 10px 20px !important; /* Ajuste o padding conforme necessário */
+ }
+
+ .flexItem {
+    max-width: 70%;
+    max-height: 70%
 }
 
-p {
-  text-align: justify;
-}
-h2, h1 {
-  color: #E38108
-}
 </style>
