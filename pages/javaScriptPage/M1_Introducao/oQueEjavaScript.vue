@@ -158,6 +158,7 @@
 import MenuJs from "@/components/javaScript/menu.JavaScript.vue";
 
 export default {
+    name:"oQueEjavaScript",
     data() {
         return {
             msg: "O que á JavaScript ?",

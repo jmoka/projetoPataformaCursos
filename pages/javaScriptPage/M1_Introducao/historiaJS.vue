@@ -219,6 +219,7 @@
 <script>
 import MenuJs from '@/components/javaScript/menu.JavaScript.vue'
 export default {
+    name:"historiaJS",
     data() {
         return {
             msg: 'História e Evolução do JavaScript',
@@ -238,6 +239,7 @@ export default {
     padding: 10px 20px 10px 20px !important;
     /* Ajuste o padding conforme necessário */
 }
+
 
 .flexItem {
     max-width: 70%;

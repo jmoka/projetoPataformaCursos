@@ -41,11 +41,6 @@ export default {
   height: 30px;
   width: 10px;
 }
-h3, h4 {
-  text-align: justify;
-}
-h1 {
-  text-align: center;
-}
+
 
 </style>

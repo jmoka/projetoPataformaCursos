@@ -151,6 +151,7 @@
 import MenuJs from "@/components/javaScript/menu.JavaScript.vue";
 
 export default {
+  name:"indeces",
   data() {
     return {
       isDark: true,

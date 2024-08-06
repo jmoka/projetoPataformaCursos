@@ -5,7 +5,8 @@
                 <MenuJs />
             </v-navigation-drawer>
             <v-main>
-                <p>{{ msg }}</p>
+                <h1><b>{{ msg }}</b></h1>
+                <h4><b>Objetivo:</b></h4>
             </v-main>
         </v-layout>       
     </v-app>
@@ -14,6 +15,7 @@
 <script>
 import MenuJs from "@/components/javaScript/menu.JavaScript.vue";
     export default {
+        name:"tipoDeDados",
       data () {
             return{
                 msg:"Sintax Básica"
