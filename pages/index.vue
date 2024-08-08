@@ -17,13 +17,13 @@
           <v-img src="/icon/vue.png" :width="300" :height="300" contain></v-img>        
         </v-col>
         <v-col cols="12" class="d-flex justify-center">
-          <h3>
+          <p>
             Desenvolva sua expertise em front-end com nosso curso completo de JavaScript e ferramentas Vue. Aprenda a
             criar interfaces reativas com Vue.js, gerenciar estados complexos com Vuex e implementar renderização do
             lado do servidor com Nuxt. Inclui também módulos detalhados de CSS, HTML e Docker. Projetado para iniciantes
             e desenvolvedores experientes, nosso curso oferece uma experiência prática para transformar seu conhecimento
             em aplicações web robustas e modernas.
-          </h3>
+          </p>
         </v-col>
       </v-row>
     </v-container>

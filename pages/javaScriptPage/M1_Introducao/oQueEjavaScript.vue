@@ -8,11 +8,14 @@
                 <h1>{{ msg }}</h1>
             </div>
             <h4><b>Objetivo:</b></h4>
-            <p>Nesta aula, você aprenderá o que é JavaScript, uma das linguagens de programação mais importantes e
-            amplamente utilizadas no desenvolvimento web. JavaScript é uma linguagem de script que permite criar
-            interatividade e dinamismo em páginas web, permitindo que os desenvolvedores adicionem comportamentos
-            complexos a sites e aplicativos. Você entenderá como o JavaScript funciona, suas principais características
-            e como ele é integrado com HTML e CSS para criar experiências de usuário ricas e interativas.</p>
+            <p>
+                JavaScript é uma linguagem de programação que foi criada para tornar as
+                páginas da web interativas. Enquanto HTML define a estrutura de uma
+                página e CSS define o estilo, JavaScript permite que as páginas façam
+                coisas dinâmicas, como responder a cliques de botões, validar formulários
+                e muito mais.
+            </p>
+
 
             <v-container class="flex">
                 <v-responsive :aspect-ratio="16 / 9" class="flexItem">
@@ -21,127 +24,76 @@
                 </v-responsive>
             </v-container>
 
+            <section>
+                <h2>Por que aprender JavaScript?</h2>
+                <ul>
+                    <li><b>Popularidade:</b></li>
+                    <p>Uma das linguagens mais usadas no desenvolvimento web.</p>
+                    <li><b>Versatilidade</b>:</li>
+                    <p>Pode criar desde pequenas funcionalidades até aplicações
+                        web completas.</p>
+                    <li><b>Carreira:</b></li>
+                    <p>Dominar JavaScript abre portas para muitas oportunidades no
+                        desenvolvimento front-end.</p>
+                </ul>
+            </section>
 
-            <p class="formatText">
-                JavaScript é a linguagem de programação mais popular do mundo.
-                JavaScript® (às vezes abreviado para JS) é uma linguagem leve,
-                <strong><a href="#interpretada">interpretada</a></strong> e baseada em objetos com <strong><a
-                        href="#primeiraClasse">funções de primeira classe</a></strong>,
-                mais conhecida como a linguagem de script para páginas Web, mas usada também em vários outros ambientes
-                sem browser, tais como node.js,
-                Apache CouchDB e Adobe Acrobat. O JavaScript é uma linguagem baseada em <strong><a
-                        href="#prototipos">protótipos</a></strong>,
-                <strong><a href="#multi-paradigma">multi paradigma</a></strong> e <strong><a
-                        href="#dinâmica">dinâmica</a></strong>, suportando estilos de orientação a objetos, imperativos
-                e declarativos
-                (como por exemplo a programação funcional).
-            </p>
-            <br>
-            <h2 id="ECMAScript">O que é ECMAScript?</h2>
-            <p class="formatText">
-                ECMAScript é o <b>padrão subjacente ao JavaScript</b>, uma das linguagens de programação mais populares
-                do mundo. Desde 2012, todos os
-                navegadores modernos oferecem suporte completo ao ECMAScript 5.1, e os navegadores mais antigos suportam
-                pelo menos o ECMAScript 3.
-                A evolução do padrão continuou a partir daí, com a ECMA International publicando a sexta versão do
-                ECMAScript em 17 de junho de 2015,
-                oficialmente conhecida como ECMAScript 2015 (anteriormente ECMAScript 6 ou ES6). Desde então,
-                novas versões do ECMAScript são lançadas anualmente, trazendo melhorias e novos recursos para
-                desenvolvedores.
-            </p>
-            <h2 id="ECMAScript?">Por que o ECMAScript é Importante?</h2>
-            <p class="formatText">
-                A importância do ECMAScript reside em sua capacidade de <b>padronizar a sintaxe e os recursos do
-                    JavaScript</b>,
-                garantindo que os desenvolvedores possam criar aplicações web consistentes e confiáveis. Com cada nova
-                versão,
-                o ECMAScript introduz funcionalidades que simplificam o desenvolvimento, melhoram o desempenho e tornam
-                o código mais legível e sustentável.
-            </p>
-            <h2 id="interpretada">O que é linguagem Interpretada?</h2>
-            <p class="formatText">
-                Uma linguagem interpretada é aquela cujo código é <b>executado diretamente por um interpretador</b>, ao
-                invés de ser compilado para código de máquina
-                antes de ser executado. Linguagens interpretadas permitem a execução linha por linha do código, o que
-                pode facilitar a depuração e o desenvolvimento rápido.
-            </p>
-            <h5>Exemplos:</h5>
-            <div v-for="(code, index) in filteredCodes_ex1" :key="index" class="code-container">
+            <section>
+                <h2>Como funciona o JavaScript?</h2>
+                <p>
+                    JavaScript é uma linguagem de programação que é executada diretamente no
+                    navegador. Quando você visita uma página da web, o JavaScript nela contido
+                    é baixado junto com o HTML e o CSS e é executado no seu navegador.
+                </p>
+
                 <pre>
-                    <code v-html="code.code"></code>
-                </pre>
-            </div>
-            <br>
-            <h2 id="primeiraClasse">O que são funções de Primeira Classe?</h2>
-            <p class="formatText">
-                Funções de primeira classe são funções que são tratadas como cidadãos de primeira classe. Isso significa
-                que podem ser atribuídas a variáveis,
-                passadas como argumentos para outras funções, e retornadas por outras funções. Em JavaScript, funções
-                são de primeira classe.
-            </p>
-            <h5>Exemplos:</h5>
-            <div v-for="(code, index) in filteredCodes_ex2" :key="index" class="code-container">
-                <pre>
-                    <code v-html="code.code"></code>
-                </pre>
-            </div>
-            <br>
-            <h2 id="aplicacao">Quais suas Aplicações?</h2>
-            <p class="formatText">
-                Linguagens interpretadas têm uma ampla gama de aplicações devido à sua flexibilidade e facilidade de
-                uso. São frequentemente usadas para scripts de
-                automação, desenvolvimento web, prototipagem rápida, e em ambientes onde a portabilidade do código é
-                importante.
-            </p>
-            <h5>Exemplos:</h5>
-            <p class="formatText">
-                JavaScript é amplamente utilizado no desenvolvimento web para criar páginas dinâmicas e interativas.
-                Python, outra linguagem interpretada,
-                é muito popular para automação de tarefas, desenvolvimento de back-end web, análise de dados,
-                aprendizado de máquina, e mais.
-            </p>
-            <br>
-            <h2 id="prototipos">Baseada em Protótipos?</h2>
-            <p class="formatText">
-                Linguagens baseadas em protótipos utilizam a herança prototípica, onde objetos podem herdar propriedades
-                e métodos diretamente de outros objetos.
-                Em vez de classes, essas linguagens usam protótipos para definir o comportamento dos objetos.
-            </p>
-            <h5>Exemplos:</h5>
-            <div v-for="(code, index) in filteredCodes_ex3" :key="index" class="code-container">
-                <pre>
-                    <code v-html="code.code"></code>
-                </pre>
-            </div>
-            <br>
-            <h2 id="multi-paradigma">O que é Multi-Paradigma?</h2>
-            <p class="formatText">
-                Uma linguagem de programação multi-paradigma é aquela que suporta mais de um paradigma de programação,
-                permitindo que os desenvolvedores
-                escolham o estilo que melhor se adapta ao problema que estão resolvendo. JavaScript, por exemplo,
-                suporta programação imperativa, funcional
-                e orientada a objetos.
-            </p>
-            <h5>Exemplos:</h5>
-            <div v-for="(code, index) in filteredCodes_ex4" :key="index" class="code-container">
-                <pre>
-                    <code v-html="code.code"></code>
-                </pre>
-            </div>
-            <br>
-            <h2 id="dinâmica">O que é uma Linguagem Dinâmica?</h2>
-            <p class="formatText">
-                Uma linguagem dinâmica é aquela que realiza muitas verificações de tipo e outras operações em tempo de
-                execução. Isso significa que o tipo das variáveis
-                pode mudar durante a execução do programa, e novos métodos e propriedades podem ser adicionados aos
-                objetos em tempo de execução.
-            </p>
-            <h5>Exemplos:</h5>
-            <div v-for="(code, index) in filteredCodes_ex5" :key="index" class="code-container">
-                <pre>
-                    <code v-html="code.code"></code>
-                </pre>
-            </div>
+        <code>
+        alert("Bem-vindo ao curso de JavaScript!");
+        </code>
+    </pre>
+            </section>
+
+            <section>
+                <h2>Componentes Básicos do JavaScript</h2>
+                <ul>
+                    <li> <strong>Variáveis:</strong></li>
+                    <p>Servem para armazenar dados.</p>
+                    <pre><code>let nome = "João";</code></pre>
+
+                    <li><strong>Funções:</strong> </li>
+                    <p>Blocos de código que executam uma tarefa específica.</p>
+                    <pre>
+                <code>
+                    function saudacao() {
+                        alert("Olá, bem-vindo!");
+                    }
+                </code>
+            </pre>
+
+                    <li><strong>Eventos:</strong></li>
+                    <p>Ações que acontecem em uma página, como um clique de mouse.</p>
+
+                    <pre>
+            <code>
+                document.getElementById("meuBotao").addEventListener("click", function() {
+                    alert("Você clicou no botão!");
+                });
+            </code>
+        </pre>
+
+                </ul>
+            </section>
+
+            <section>
+                <h2>Conclusão</h2>
+                <p>
+                    JavaScript é uma linguagem de programação poderosa que permite tornar as
+                    páginas da web mais dinâmicas e interativas. Esta foi uma introdução ao
+                    JavaScript, e nos próximos passos, vamos explorar mais profundamente como
+                    criar e manipular elementos na web usando JavaScript.
+                </p>
+            </section>
+
         </v-main>
         <v-footer>
             <div>
@@ -158,11 +110,11 @@
 import MenuJs from "@/components/javaScript/menu.JavaScript.vue";
 
 export default {
-    name:"oQueEjavaScript",
+    name: "oQueEjavaScript",
     data() {
         return {
             msg: "O que á JavaScript ?",
-            video: 'https://www.youtube.com/embed/VIDEO_ID',
+            video: '/videos/js/aula1_js.mp4',
             propriedadesVideo: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
             palavrachaves: [
                 { id: 1, palavra: "Interpretada", ancola: "#interpretada" },
@@ -323,31 +275,7 @@ console.log(pessoa); // Saída: { nome: "Maria", idade: 30 }
     max-height: 70%
 }
 
-.code-container {
-    overflow-x: auto;
-    /* Adiciona rolagem horizontal se necessário */
-    margin-bottom: 20px;
-    /* Espaçamento inferior para separar os blocos de código */
-}
-
-pre {
-    white-space: pre-wrap;
-    /* Faz o código quebrar linhas se necessário */
-    word-wrap: break-word;
-    /* Quebra palavras longas para ajustar ao container */
-
-    padding: 10px;
-    /* Adiciona algum espaçamento interno */
-    border-radius: 4px;
-    /* Bordas arredondadas para um visual mais agradável */
-    max-width: 100%;
-    /* Garante que o pre não ultrapasse o tamanho do container */
-    font-size: 14px;
-    /* Ajusta o tamanho da fonte para melhor legibilidade */
-}
-
-code {
-    font-family: monospace;
-    /* Fonte monoespaçada para melhor legibilidade */
+li {
+    color: #894200
 }
 </style>

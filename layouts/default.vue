@@ -1,5 +1,6 @@
 <template>
   <v-app>   
+    
         <!-- Componente para dispositivos móveis (Extra small e Small) -->
     <DafaultMob v-if="$vuetify. breakpoint.mobile" />
 

@@ -10,6 +10,10 @@ p {
     text-align: justify;
 }
 
+.destaque {
+  color: #E38108
+}
+
 h1 {
   color: #E38108
 }
@@ -41,5 +45,19 @@ iframe {
 .flex {
   display: flex;
   justify-content: center; 
+}
+
+pre {
+
+  padding: 10px;
+  border: 1px solid #E38108;
+  border-radius: 5px;
+  overflow-x: auto; /* Adiciona uma barra de rolagem horizontal se necessário */
+  max-width: 100%; /* Garante que o contêiner não ultrapasse a largura do pai */
+}
+
+code {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
 }
 
