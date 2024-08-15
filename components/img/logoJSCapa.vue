@@ -1,11 +1,10 @@
 <template>
   <nuxt-link  :to="home">
     <v-img class="img"
-      src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/260px-Unofficial_JavaScript_logo_2.svg.png"      
+      src="/icon/js.png"     
     ></v-img>
   </nuxt-link >
-  </template>
-  
+  </template>  
   <script>
   
   export default {

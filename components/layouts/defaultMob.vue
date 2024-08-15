@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import Logo from '@/components/logoJota.vue';
+import Logo from '~/components/img/logoJota.vue';
 import MenuJs from '@/components/javaScript/menu.JavaScript.vue'
 
 

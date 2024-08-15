@@ -13,7 +13,7 @@
   </v-app>
 </template>
 <script>
-import LgoJS from "@/components/logoJSCapa.vue"
+import LgoJS from "~/components/img/logoJSCapa.vue"
 import Menu from "@/components/javaScript/menu.JavaScript.vue"
 export default {
   name: "Index",

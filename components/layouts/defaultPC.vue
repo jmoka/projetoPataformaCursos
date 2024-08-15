@@ -22,7 +22,7 @@
               </v-list-item>
             </v-list>
           </v-col>
-          <v-col cols="2" class="d-flex justify-center align-center">
+          <v-col cols="2" class="d-flex justify-end align-start">
             <v-switch class="pt-5" v-model="isDarkTheme" label="Dark"></v-switch>
           </v-col>
         </v-row>
@@ -35,7 +35,7 @@
   </template>
   
   <script>
-  import Logo from '@/components/logoJota.vue';
+  import Logo from '~/components/img/logoJota.vue';
   
   export default {
     name: 'defaultPC',
@@ -44,14 +44,15 @@
         isDarkTheme: false,
         cursos: [
           { id: 1, name: 'Java Script', to: '/javaScriptPage' },
-          { id: 2, name: 'CSS', to: '/cssPage' },
-          { id: 3, name: 'HTML', to: '/htmlPage' },
-          { id: 4, name: 'Node', to: '/nodePage' },
-          { id: 5, name: 'Vue.js', to: '/vuePage' },
-          { id: 6, name: 'Vuetify', to: '/vuetifyPage' },
-          { id: 7, name: 'Vuex', to: '/vuexPage' },
-          { id: 8, name: 'Nuxt', to: '/nuxtPage' },
-          { id: 9, name: 'Docker', to: '/dockerPage' },
+          { id: 2, name: 'PHP', to: '/phpPage' },
+          { id: 3, name: 'CSS', to: '/cssPage' },
+          { id: 4, name: 'HTML', to: '/htmlPage' },
+          { id: 5, name: 'Node', to: '/nodePage' },
+          { id: 6, name: 'Vue.js', to: '/vuePage' },
+          { id: 7, name: 'Vuetify', to: '/vuetifyPage' },
+          { id: 8, name: 'Vuex', to: '/vuexPage' },
+          { id: 9, name: 'Nuxt', to: '/nuxtPage' },
+          { id: 10, name: 'Docker', to: '/dockerPage' },
         ],
       };
     },

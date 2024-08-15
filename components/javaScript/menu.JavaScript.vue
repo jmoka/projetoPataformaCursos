@@ -5,18 +5,18 @@
     </v-card>
     <v-card>
       <v-card-subtitle class="text-red-darken-1">
-        <nuxt-link :to=Indice><b>Índeces</b></nuxt-link>
+        <nuxt-link :to=Indice><b>ÍNDICES</b></nuxt-link>
       </v-card-subtitle>
     </v-card>    
-      <v-expansion-panels >
-        <v-expansion-panel v-for="item in lista" :key="item.id" >
-          <v-expansion-panel-header >
+      <v-expansion-panels>
+        <v-expansion-panel  v-for="item in lista" :key="item.id" >
+          <v-expansion-panel-header  class="styleContainer">
             <b>{{ item.name }}</b>
           </v-expansion-panel-header>
           <!-- Subitens -->
           <v-expansion-panel-content v-if="item.open">
             <v-list-item-group>
-              <v-list-item class="full" v-for="subItem in item.subItems" :key="subItem.id">
+              <v-list-item  v-for="subItem in item.subItems" :key="subItem.id">
                 <nuxt-link :to="subItem.page">
                   {{ subItem.name }}
                 </nuxt-link>
@@ -27,11 +27,10 @@
       </v-expansion-panels>   
   </v-app>
 </template>
-
 <script>
-import LgoJS from "@/components/logoJSCapa.vue";
+import LgoJS from "~/components/img/logoJSCapa.vue";
 export default {
-  name: "Index",
+  name: "menuJavaScript",
   data() {
     return {
       Indice: "/javaScriptPage/indeces",
@@ -76,8 +75,9 @@ export default {
             { id: 5, name: "Conversão de Tipos", page: "/javaScriptPage/M3_SintaxeBasica/conversaoDeTipos" },
             { id: 6, name: "Operadores", page: "/javaScriptPage/M3_SintaxeBasica/operadores" },
             { id: 7, name: "Comentários", page: "/javaScriptPage/M3_SintaxeBasica/comentarios" },
-
-
+            { id: 8, name: "Entrada de Dados", page: "/javaScriptPage/M3_SintaxeBasica/entradaDados" },
+            { id: 9, name: "Concatenação ", page: "/javaScriptPage/M3_SintaxeBasica/concatenacao" },
+            { id: 10, name: "Interpolacao ", page: "/javaScriptPage/M3_SintaxeBasica/interpolacao" },
           ]
         },
         {
@@ -86,8 +86,8 @@ export default {
           page: "",
           open: true,
           subItems: [
-            { id: 1, name: "Sintaxe Básica", page: "/javaScriptPage/sintax_TiposDados/sintaxBasica" },
-            { id: 2, name: "Estruturas de Controle", page: "/javaScriptPage/sintax_TiposDados/estruturasDeControle" },
+            { id: 1, name: "Condicionais", page: "/javaScriptPage/M4_EstruturaDeControle/condicionais" },
+            { id: 2, name: "Estruturas de Controle", page: "/javaScriptPage/M4_EstruturaDeControle/estruturasControle", },
             { id: 3, name: "Funções", page: "/javaScriptPage/sintax_TiposDados/funcoes" },
             { id: 4, name: "Arrays", page: "/javaScriptPage/sintax_TiposDados/arrays" },
             { id: 5, name: "Objetos", page: "/javaScriptPage/sintax_TiposDados/objetos" },
@@ -121,14 +121,13 @@ export default {
 .TextSubItens {
   color: Black;
 }
-
-.full {
-  margin: 0 !important;
-  padding: 0 !important;
-  border: none;
+.styleContainer {
+  padding: 20px;
 }
 
-.c {
-  max-width: 100%;
+.styleContainer:hover {
+  padding: 20px;
 }
+
+
 </style>

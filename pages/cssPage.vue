@@ -1,18 +1,17 @@
 <template>
   <v-app class="theme--light">
-    <v-navigation-drawer permanent>   
+    <v-navigation-drawer permanent>
       <v-card>
-        <v-card-title>Aulas CSS</v-card-title>   
+        <v-card-title>Aulas CSS</v-card-title>
       </v-card>
       <v-list>
         <v-list-item v-for="(item, index) in lista" :key="index">
           <a :href="item.page" :style="{ color: tcolor }">{{ item.name }}</a>
-        </v-list-item>      
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
   </v-app>
 </template>
-
 <script>
 export default {
   data() {
@@ -39,10 +38,9 @@ export default {
   }
 };
 </script>
-
 <style scoped>
 /* Estilos específicos para o componente, se necessário */
-.cor{
+.cor {
   color: brown;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <nuxt-link  :to="home">
     <v-img class="img"
-      src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Vue.png"      
+      src="/icon/vue.png"      
     ></v-img>
   </nuxt-link >
   </template>
