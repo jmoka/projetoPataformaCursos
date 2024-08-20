@@ -67,11 +67,24 @@ export default {
           to: '/js',
           icon: 'j',
           src: "/icon/js.png",
-
-
         },
         {
           id: 2,
+          name: 'TypeScript',
+          to: '/ts',
+          icon: 't',
+          src: "/icon/ts.png",
+        },
+        {
+          id: 3,
+          name: 'PHP',
+          to: '/php',
+          icon: 'p',
+          src: "/icon/php.png",
+
+        },
+        {
+          id: 4,
           name: 'CSS',
           to: '/css',
           icon: 'c',
@@ -79,7 +92,7 @@ export default {
 
         },
         {
-          id: 3,
+          id: 5,
           name: 'HTML',
           to: '/html',
           icon: 'h',
@@ -87,7 +100,7 @@ export default {
 
         },
         {
-          id: 4,
+          id: 6,
           name: 'Node',
           to: '/node',
           icon: 'n',
@@ -95,7 +108,7 @@ export default {
 
         },
         {
-          id: 5,
+          id: 7,
           name: 'Vue.js',
           to: '/vue',
           icon: 'v',
@@ -103,7 +116,7 @@ export default {
 
         },
         {
-          id: 6,
+          id: 8,
           name: 'Vuetify',
           to: '/vuetify',
           icon: 'vt',
@@ -111,7 +124,7 @@ export default {
 
         },
         {
-          id: 7,
+          id: 9,
           name: 'Vuex',
           to: '/vuex',
           icon: 'vx',
@@ -119,7 +132,7 @@ export default {
 
         },
         {
-          id: 8,
+          id: 10,
           name: 'Nuxt',
           to: '/nuxt',
           icon: 'nx',
@@ -127,7 +140,7 @@ export default {
 
         },
         {
-          id: 9,
+          id: 11,
           name: 'Docker',
           to: '/docker',
           icon: 'd',

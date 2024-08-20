@@ -255,7 +255,7 @@ export default {
             msg: 'Funções de Verificação de Tipos de Dados em PHP',
             video: 'https://www.youtube.com/embed/videoID', // Substitua 'videoID' pelo ID do vídeo desejado
             propriedadesVideo: 'autoplay; encrypted-media',
-            codigoWeb: "/phpPage/codePHP",
+            codigoWeb: "/php/codePHP",
             funcoes: [
     { id: 1, name: "is_int()", ancora: "#is_int" },
     { id: 2, name: "is_string()", ancora: "#is_string" },

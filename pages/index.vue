@@ -49,7 +49,7 @@
         </thead>
         <tbody>
           <tr v-for="(item, index) in cronograma" :key="index">
-            <td>{{ item.horario }}</td>
+            <td class="horario">{{ item.horario }}</td>
             <td>{{ item.materias[0] }}</td>
             <td>{{ item.materias[1] }}</td>
             <td>{{ item.materias[2] }}</td>
@@ -73,7 +73,7 @@ export default {
   data() {
     return {
       cronograma:[
-        { horario: '06:00 - 09:00', materias :['JavaScript', 'TypeScript', 'GraphQL API', 'GraphQL API', 'JavaScript', 'TypeScript', 'DOCKER'] },
+        { horario: '06:00 - 09:00', materias :['JAVASCRIPT', 'TYPESCRIPT', 'GRAPHQL API', 'GRAPHQL API', 'JAVASCRIPT', 'TS_DESINNER_PATTERNS', 'DOCKER'] },
         { horario: '13:00 - 17:00', materias :['PHP7', 'LARAVEL', 'LARAVEL-API-REST', 'LARAVEL', 'HTML5', 'PYTHON-DESKTOP/STREAMLIT', 'PYTHON3'] },
         { horario: '18:00 - 19:00', materias :['VUE', 'NUXT', 'VUE', 'NUXT', 'VUE', 'NUXT', 'SITE'] },
         { horario: '21:00 - 11:00', materias: ['CSS', 'TAILWINDCSS', 'CSS', 'API REST', 'JQUERY', 'AJAX', 'LIVRE'] },
@@ -108,6 +108,9 @@ table {
   width: 100%; 
   font-size: 18px;
 }
+.horario{
+  background-color: #894200;
+}
 
 th, td {
   padding: 12px 15px;
@@ -115,9 +118,9 @@ th, td {
 }
 
 th {
-  background-color: #f4f4f4;
   font-weight: bold;
   text-align: center;
+  background-color: #894200;
 }
 
 td {
@@ -125,11 +128,14 @@ td {
 }
 
 tr:nth-child(even) {
-  background-color: #f9f9f9;
+  background-color: #e3800872;
+}
+tr:nth-child(odd) {
+  background-color: #ff8c00;
 }
 
 tr:hover {
-  background-color: #f1f1f1;
+  background-color: black;
 }
 
 @media (max-width: 768px) {

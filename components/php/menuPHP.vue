@@ -4,8 +4,9 @@
       <v-card-title><b>Menu PHP</b></v-card-title>
     </v-card>
     <v-card>
-      <v-card-subtitle class="text-red-darken-1 d-flex flex-column">
-        <nuxt-link :to=Indice><b>Índeces</b></nuxt-link>
+      <v-card-subtitle class="text-red-darken-1">
+        <nuxt-link :to=Indice><b>Índeces</b></nuxt-link> <br><br>
+        <nuxt-link :to=CodePHP><b>Código PHP</b></nuxt-link>
       </v-card-subtitle>
     </v-card>
     <v-expansion-panels>
@@ -33,8 +34,8 @@ export default {
   name: "menuPHP",
   data() {
     return {
-      Indice: "/php/indeces",
-      CodigoWeb:"/codeWeb",
+      Indice: "/php/indices",
+      CodePHP:"/php/codePHP",
       lista: [
         {
           id: 1,

@@ -1,6 +1,9 @@
 <template>
     <v-app>
-      <v-main>
+        <v-navigation-drawer app>
+            <MenuTS />
+        </v-navigation-drawer>
+        <v-main>
         <container>      
         <iframe :src="url+linguagem"
          frameborder="0" allowfullscreen>
@@ -11,20 +14,20 @@
 </template>
 
 <script>
-
+import MenuTS from '~/components/ts/menuTS.vue'
 export default {
-    name: "code",
+    name: "codeTS",
     data() {
         return {
             msg: 'Concatenação de Strings',
             video: 'https://www.youtube.com/embed/VIDEO_ID',  // Substitua por um vídeo relevante
             propriedadesVideo: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
             url:"https://onecompiler.com/",
-            linguagem:"",
+            linguagem:"typescript",
           }
     },
     components: {
-      
+        MenuTS
     }
 }
 </script>
