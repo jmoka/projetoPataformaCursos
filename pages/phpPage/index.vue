@@ -1,14 +1,14 @@
 <template>
-    <v-app>
+  <v-app>
     <v-layout>
       <v-navigation-drawer permanent v-model="drawer">
         <Menu />
-      </v-navigation-drawer>   
-      <v-main>
+      </v-navigation-drawer>
+      <v-main>      
         <v-container class="d-flex justify-center align-center">
           <Logo />
         </v-container>
-      </v-main>  
+      </v-main>
     </v-layout>
   </v-app>
 </template>
@@ -17,8 +17,8 @@ import Logo from "~/components/img/logoPHP.vue"
 import Menu from "@/components/php/menu.PHP.vue"
 export default {
   name: "Index",
- 
-  components:{
+
+  components: {
     Logo,
     Menu
   }
@@ -26,5 +26,4 @@ export default {
 </script>
 
 
-<style scoped>
-</style>
+<style scoped></style>

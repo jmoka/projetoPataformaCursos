@@ -31,12 +31,13 @@
               <br>
               <h3><strong>3. Sintaxe Básica</strong></h3>
               <li>Primeiro Script PHP</li>
-              <li> Variáveis</li>
+              <li>Variáveis</li>
               <li>Tipos de dados</li>
               <li>Operadores</li>
               <li>Cometários</li>
               <li>Quebra de Linha</li>
               <li>Concatenação</li>
+              <li>Verificacao de Tipos</li>
               <br>
               <h3><strong>4. Estruturas de Controle - Parte 1</strong></h3>
               <li>Condicionais (if, else)</li>

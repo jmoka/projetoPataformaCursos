@@ -17,6 +17,8 @@
                 </v-responsive>
             </v-container>
             <h1><b>Formatação de Datas e Horas com `date()`</b></h1>
+            <li>Acesse o <nuxt-link to="/phpPage/playground">PHP Playground</nuxt-link> </li>
+            <li>Execute os códigos abaixo</li>
             <ul>
                 <li>
                     <h2><b>Uso de Letras na Função `date()`:</b></h2>
@@ -87,8 +89,6 @@ echo "Formato 3: " . date("l, F j, Y") . "&lt;br&gt;";
                 <p>
                     Cada formato exibirá a data de forma diferente, utilizando as letras especificadas para representar os diversos componentes da data.
                 </p>
-                <li>Acesse o <nuxt-link to="/phpPage/playground">PHP Playground</nuxt-link></li>
-                <li>Execute o Código Abaixo</li>
             </ul>
             <h4><b>Exemplos Adicionais:</b></h4>
             <ul>

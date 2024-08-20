@@ -1,9 +1,7 @@
 <template>
-  <v-app>   
-    
+  <v-app>    
         <!-- Componente para dispositivos móveis (Extra small e Small) -->
     <DafaultMob v-if="$vuetify. breakpoint.mobile" />
-
     <!-- Componente para dispositivos médios e maiores (Medium e acima) -->
     <DafaultPC v-if="$vuetify.breakpoint.mdAndUp" /> 
   </v-app>

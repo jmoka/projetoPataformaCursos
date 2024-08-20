@@ -22,8 +22,10 @@
               </v-list-item>
             </v-list>
           </v-col>
-          <v-col cols="2" class="d-flex justify-end align-start">
-            <v-switch class="pt-5" v-model="isDarkTheme" label="Dark"></v-switch>
+          <v-col cols="2" class="d-flex justify-space-around justify-center align-center " >
+            <nuxt-link :style="linkStyle" :to="CodigoWeb"><b>Código Web</b></nuxt-link>
+            <v-switch v-model="isDarkTheme" label="Dark"></v-switch>            
+           
           </v-col>
         </v-row>
         </v-container>        
@@ -39,9 +41,11 @@
   
   export default {
     name: 'defaultPC',
+    
     data() {
       return {
         isDarkTheme: false,
+        CodigoWeb:"/phpPage/codePHP",
         cursos: [
           { id: 1, name: 'Java Script', to: '/javaScriptPage' },
           { id: 2, name: 'PHP', to: '/phpPage' },
@@ -59,6 +63,15 @@
     components: {
       Logo,
     },
+    computed:{
+      linkStyle(){
+        return{
+            color:this.isDarkTheme ? "green" : "red"
+        }
+        
+
+      }
+    },
     watch: {
       isDarkTheme(val) {
         this.$vuetify.theme.dark = val; // Alterna o tema quando o valor de isDarkTheme muda
@@ -70,6 +83,7 @@
        if (savedTheme !== null) {
         this.isDarkTheme = JSON.parse(savedTheme); // Recupera e aplica a preferência do usuário do localStorage
         this.$vuetify.theme.dark = this.isDarkTheme;
+
       }
     },
   };
@@ -85,5 +99,10 @@
   .v-toolbar__content {
     width: 100% !important;
   }
+  .linkColor {
+    
+    color: greenyellow;
+  }  
+
   </style>
   

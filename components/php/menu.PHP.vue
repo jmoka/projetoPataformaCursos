@@ -4,7 +4,7 @@
       <v-card-title><b>Menu PHP</b></v-card-title>
     </v-card>
     <v-card>
-      <v-card-subtitle class="text-red-darken-1">
+      <v-card-subtitle class="text-red-darken-1 d-flex flex-column">
         <nuxt-link :to=Indice><b>Índeces</b></nuxt-link>
       </v-card-subtitle>
     </v-card>
@@ -34,6 +34,7 @@ export default {
   data() {
     return {
       Indice: "/phpPage/indeces",
+      CodigoWeb:"/codeWeb",
       lista: [
         {
           id: 1,
@@ -70,6 +71,7 @@ export default {
             { id: 5, name: "Comentários no Código", page: "/phpPage/M3_SintaxBasica/comentariosPHP" },
             { id: 6, name: "Quebra de Linha", page: "/phpPage/M3_SintaxBasica/quebraDeLinhaPHP" },
             { id: 7, name: "Concatenação de Strings", page: "/phpPage/M3_SintaxBasica/concatenacao" },
+            { id: 7, name: "VerificacaoTipos", page: "/phpPage/M3_SintaxBasica/verificacaoTipos" },
          
           ]
         },
