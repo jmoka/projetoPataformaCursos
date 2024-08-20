@@ -2,7 +2,7 @@
     <v-app>
       <v-layout>
         <v-navigation-drawer app>
-          <MenuJs />
+         <h1>menu aqui</h1>>
         </v-navigation-drawer>
         <v-main>
           <v-container fluid>
@@ -90,12 +90,12 @@
   </template>
   
   <script>
-  import MenuJs from "@/components/javaScript/menu.JavaScript.vue";
+ 
   
   export default {
     name: "emmetShortcuts",
     components: {
-      MenuJs
+    
     }
   }
   </script>

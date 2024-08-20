@@ -46,7 +46,7 @@
 
 <script>
 import Logo from '~/components/img/logoJota.vue';
-import MenuJs from '@/components/javaScript/menu.JavaScript.vue'
+import MenuJs from '~/components/js/menuJS.vue'
 
 
 
@@ -64,7 +64,7 @@ export default {
         {
           id: 1,
           name: 'Java Script',
-          to: '/javaScriptPage',
+          to: '/js',
           icon: 'j',
           src: "/icon/js.png",
 
@@ -73,7 +73,7 @@ export default {
         {
           id: 2,
           name: 'CSS',
-          to: '/cssPage',
+          to: '/css',
           icon: 'c',
           src: "/icon/css.png",
 
@@ -81,7 +81,7 @@ export default {
         {
           id: 3,
           name: 'HTML',
-          to: '/htmlPage',
+          to: '/html',
           icon: 'h',
           src: "/icon/html.png",
 
@@ -89,7 +89,7 @@ export default {
         {
           id: 4,
           name: 'Node',
-          to: '/nodePage',
+          to: '/node',
           icon: 'n',
           src: "/icon/node.png",
 
@@ -97,7 +97,7 @@ export default {
         {
           id: 5,
           name: 'Vue.js',
-          to: '/vuePage',
+          to: '/vue',
           icon: 'v',
           src: "/icon/vue.png",
 
@@ -105,7 +105,7 @@ export default {
         {
           id: 6,
           name: 'Vuetify',
-          to: '/vuetifyPage',
+          to: '/vuetify',
           icon: 'vt',
           src: "/icon/vuetify.png",
 
@@ -113,7 +113,7 @@ export default {
         {
           id: 7,
           name: 'Vuex',
-          to: '/vuexPage',
+          to: '/vuex',
           icon: 'vx',
           src: "/icon/vuex.png",
 
@@ -121,7 +121,7 @@ export default {
         {
           id: 8,
           name: 'Nuxt',
-          to: '/nuxtPage',
+          to: '/nuxt',
           icon: 'nx',
           src: "/icon/nuxt.png",
 
@@ -129,7 +129,7 @@ export default {
         {
           id: 9,
           name: 'Docker',
-          to: '/dockerPage',
+          to: '/docker',
           icon: 'd',
           src: "/icon/docker.png",
 
