@@ -1,6 +1,6 @@
 <template>
-  <v-app>
-    <v-container fluid>
+  <v-app ajsutePagina>
+    <v-container fluid app>
       <v-row>
         <v-col cols="12" class="d-flex justify-center">
           <h1>Curso Completo de JavaScript e Ferramentas Vue</h1>
@@ -26,43 +26,43 @@
       </v-row>
     </v-container>
     <v-container fluid>
-      <div class="titleTable">       
+      <div class="titleTable">
         <h1>Primeira Fase</h1>
         <h3>Ideal 4 meses</h3>
       </div>
     </v-container>
-  
-    <v-container fluid >     
-      <div>       
+
+    <v-container fluid>
+      <div>
         <v-table>
-        <thead>
-          <tr>
-            <th>Horários</th>
-            <th>Segunda</th>
-            <th>Terça</th>
-            <th>Quarta</th>
-            <th>Quinta</th>
-            <th>Sexta</th>
-            <th>Sábado</th>
-            <th>Domingo</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(item, index) in cronograma" :key="index">
-            <td class="horario">{{ item.horario }}</td>
-            <td>{{ item.materias[0] }}</td>
-            <td>{{ item.materias[1] }}</td>
-            <td>{{ item.materias[2] }}</td>
-            <td>{{ item.materias[3] }}</td>
-            <td>{{ item.materias[4] }}</td>
-            <td>{{ item.materias[5] }}</td>
-            <td>{{ item.materias[6] }}</td>
-          </tr>
-        </tbody>
-      </v-table>
-        
+          <thead>
+            <tr>
+              <th>Horários</th>
+              <th>Segunda</th>
+              <th>Terça</th>
+              <th>Quarta</th>
+              <th>Quinta</th>
+              <th>Sexta</th>
+              <th>Sábado</th>
+              <th>Domingo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(item, index) in cronograma" :key="index">
+              <td class="horario">{{ item.horario }}</td>
+              <td>{{ item.materias[0] }}</td>
+              <td>{{ item.materias[1] }}</td>
+              <td>{{ item.materias[2] }}</td>
+              <td>{{ item.materias[3] }}</td>
+              <td>{{ item.materias[4] }}</td>
+              <td>{{ item.materias[5] }}</td>
+              <td>{{ item.materias[6] }}</td>
+            </tr>
+          </tbody>
+        </v-table>
+
       </div>
-      
+
     </v-container>
   </v-app>
 </template>
@@ -72,12 +72,12 @@ export default {
   name: 'IndexPage',
   data() {
     return {
-      cronograma:[
-        { horario: '06:00 - 09:00', materias :['JAVASCRIPT', 'TYPESCRIPT', 'GRAPHQL API', 'GRAPHQL API', 'JAVASCRIPT', 'TS_DESINNER_PATTERNS', 'DOCKER'] },
-        { horario: '13:00 - 17:00', materias :['PHP7', 'LARAVEL', 'LARAVEL-API-REST', 'LARAVEL', 'HTML5', 'PYTHON-DESKTOP/STREAMLIT', 'PYTHON3'] },
-        { horario: '18:00 - 19:00', materias :['VUE', 'NUXT', 'VUE', 'NUXT', 'VUE', 'NUXT', 'SITE'] },
+      cronograma: [
+        { horario: '06:00 - 09:00', materias: ['JAVASCRIPT', 'TYPESCRIPT', 'GRAPHQL API', 'GRAPHQL API', 'JAVASCRIPT', 'TS_DESINNER_PATTERNS', 'DOCKER'] },
+        { horario: '13:00 - 17:00', materias: ['PHP7', 'LARAVEL', 'LARAVEL-API-REST', 'LARAVEL', 'HTML5', 'PYTHON-DESKTOP/STREAMLIT', 'PYTHON3'] },
+        { horario: '18:00 - 19:00', materias: ['VUE', 'NUXT', 'VUE', 'NUXT', 'VUE', 'NUXT', 'SITE'] },
         { horario: '21:00 - 11:00', materias: ['CSS', 'TAILWINDCSS', 'CSS', 'API REST', 'JQUERY', 'AJAX', 'LIVRE'] },
-       
+
       ],
     };
   },
@@ -85,16 +85,18 @@ export default {
 </script>
 
 <style>
-
-.titleTable{
-  align-items: center;
-  text-align: center;
+.titleTable {
+  align-items: center !important;
+  text-align: center !important;
 }
+
 
 .container {
   display: flex;
-  justify-content: center; /* Alinha a tabela horizontalmente ao centro */
-  flex-direction: row;
+  justify-content: center;
+
+  /* Alinha a tabela horizontalmente ao centro */
+
 }
 
 
@@ -105,14 +107,16 @@ export default {
 }
 
 table {
-  width: 100%; 
+  width: 100%;
   font-size: 18px;
 }
-.horario{
+
+.horario {
   background-color: #894200;
 }
 
-th, td {
+th,
+td {
   padding: 12px 15px;
   border: 1px solid #ddd;
 }
@@ -130,6 +134,7 @@ td {
 tr:nth-child(even) {
   background-color: #e3800872;
 }
+
 tr:nth-child(odd) {
   background-color: #ff8c00;
 }
@@ -142,8 +147,9 @@ tr:hover {
   table {
     font-size: 14px;
   }
-  
-  th, td {
+
+  th,
+  td {
     padding: 10px 12px;
   }
 
@@ -160,8 +166,9 @@ tr:hover {
   table {
     font-size: 12px;
   }
-  
-  th, td {
+
+  th,
+  td {
     padding: 8px 10px;
   }
 
@@ -173,5 +180,4 @@ tr:hover {
     font-size: 16px;
   }
 }
-
 </style>

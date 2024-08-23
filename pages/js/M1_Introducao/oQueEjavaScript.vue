@@ -250,7 +250,7 @@ console.log(pessoa); // Saída: { nome: "Maria", idade: 30 }
     },
     components: {
         MenuJs,
-        Footer
+
     },
     computed: {
         filteredCodes_ex1() {
