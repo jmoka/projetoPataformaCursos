@@ -5,13 +5,26 @@
     background-color: transparent !important;
     width: 100%;
   }
-
-  [red]{
-    color:red;
+  [ajsutePagina]{
+    margin-top: 70px;    
   }
 
+  .v-main {
+    margin-top: 30px;
+    padding: 10px 20px 10px 140px !important;
+  }
+
+  .v-footer{
+    margin-left: 140px;
+  }
+  
+  li {
+    color: red
+}
+ 
 p {
     text-align: justify;   
+    
 }
 
 .destaque {
@@ -19,22 +32,29 @@ p {
 }
 
 h1 {
-  color: #E38108
+  color: #E38108;
+  text-align: justify;   
 }
 
 h2 {
-    color: #E38108
+    color: #E38108;
+    text-align: justify; 
+   
 }
 h3 {
-  color: #894200
+  color: #894200;
+  text-align: justify;   
 }
 
 h4 {
-  color: #E38108
+  color: #E38108;
+  text-align: justify;  
+  
 }
 
 h5 {
-  color: #894200
+  color: #894200;
+  text-align: justify;  
 }
 .flex {
     display: flex;

@@ -1,13 +1,13 @@
 <template>
-  <v-app>
+  <v-app ajsutePagina>
     <v-layout>
-      <v-navigation-drawer permanent v-model="drawer">
+      <v-navigation-drawer app>
         <Menu />
       </v-navigation-drawer>
-      <v-main>      
-        <v-container class="d-flex justify-center align-center">
+      <v-main>
+        <div class="center">
           <Logo />
-        </v-container>
+        </div>
       </v-main>
     </v-layout>
   </v-app>
@@ -25,5 +25,10 @@ export default {
 };
 </script>
 
-
-<style scoped></style>
+<style scoped>
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>

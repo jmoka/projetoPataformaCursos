@@ -4,7 +4,7 @@
             <MenuJs />
         </v-navigation-drawer>
         <v-main>
-            <h1><b>{{msg}}</b></h1>
+            <h1><b>{{ msg }}</b></h1>
 
             <h4><b>Objetivo:</b></h4>
             <p>
@@ -12,8 +12,8 @@
                 e entender os diferentes tipos de variáveis (<code>var</code>, <code>let</code>, <code>const</code>).
                 Também discutiremos as boas práticas para nomeação de variáveis.
             </p>
-            <v-container class="flex">
-                <v-responsive :aspect-ratio="16 / 9" class="flexItem">
+            <v-container video>
+                <v-responsive :aspect-ratio="16 / 9">
                     <iframe :src='video' :allow='propriedadesVideo' allowfullscreen>
                     </iframe>
                 </v-responsive>
@@ -177,7 +177,22 @@
                 programação, e dominar seu uso é crucial para o desenvolvimento em JavaScript. No próximo módulo,
                 exploraremos os operadores e como utilizá-los para manipular valores e expressões.
             </p>
+            <v-container video>
+                <v-responsive :aspect-ratio="16 / 9">
+                    <iframe :src='video' :allow='propriedadesVideo' allowfullscreen>
+                    </iframe>
+                </v-responsive>
+            </v-container>
+
         </v-main>
+        <v-footer>
+            <h3>Referências:</h3>
+            <v-container class="d-block">
+                <p v-for="(ref, index) in listaReferencias" :key="index">
+                    <a :href="ref.link">{{ ref.name }}</a>
+                </p>
+            </v-container>
+        </v-footer>
     </v-app>
 </template>
 
@@ -190,6 +205,11 @@ export default {
             msg: 'Variáveis em JavaScript',
             video: 'https://www.youtube.com/embed/VIDEO_ID',
             propriedadesVideo: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
+            listaReferencias: [
+                { id: 1, name: "w3schools", link: "https://www.w3schools.com/" },
+                { id: 2, name: "MDN Web Docs", link: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript" },
+                { id: 3, name: "ChatGPT", link: "https://chatgpt.com/" }
+            ],
         }
     },
     components: {
@@ -197,16 +217,12 @@ export default {
     }
 
 }
+
 </script>
 
 <style scoped>
-.v-main {
-    padding: 10px 20px 10px 20px !important;
-    /* Ajuste o padding conforme necessário */
-}
-
-.flexItem {
+.video {
     max-width: 70%;
-    max-height: 70%
+    max-height: 70%;
 }
 </style>

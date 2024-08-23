@@ -1,12 +1,12 @@
 <template>
   <v-app ajsutePagina>
     <v-card class="TextMenu">
-      <v-card-title><b>Menu TypeScript</b></v-card-title>
+      <v-card-title><b>Menu Laravel</b></v-card-title>
     </v-card>
     <v-card>
       <v-card-subtitle class="text-red-darken-1">
-        <nuxt-link :to=Indice><b>Índeces</b></nuxt-link> <br><br>
-        <nuxt-link :to=CodeTS><b>Código PHP</b></nuxt-link>
+        <nuxt-link :to="Indice"><b>ÍNDICE</b></nuxt-link> <br> <br>
+        <nuxt-link :to=Code><b>Código Laravel</b></nuxt-link>
       </v-card-subtitle>
     </v-card>
     <v-container>
@@ -33,13 +33,13 @@
 </template>
 
 <script>
-
+import LgoTS from "~/components/img/logoLaravel.vue";
 export default {
-  name: "menuTS",
+  name: "menuLaravel",
   data() {
     return {
-      Indice: "/ts/indices",
-      CodeTS: "/ts/codeTS",
+      Indice: "/laravel/indices",
+      Code: "/laravel/codeLaravel",
       lista: [
         {
           id: 1,
@@ -336,7 +336,9 @@ export default {
       item.open = !item.open;
     }
   },
-
+  components: {
+    LgoTS
+  }
 };
 </script>
 

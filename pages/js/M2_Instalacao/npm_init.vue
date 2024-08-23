@@ -12,13 +12,14 @@
                 Node.js e criar um arquivo <code>package.json</code>. Esse arquivo é essencial para gerenciar as
                 dependências e as informações do seu projeto.
             </p>m JavaScript, incluindo a instalação de ferramentas essenciais e a criação de um projeto básico.
-                    <!-- Placeholder do vídeo -->
-            <v-container class="flex">
-                <v-responsive :aspect-ratio="16 / 9" class="flexItem">
+            <!-- Placeholder do vídeo -->
+            <v-container video>
+                <v-responsive :aspect-ratio="16 / 9">
                     <iframe :src='video' :allow='propriedadesVideo' allowfullscreen>
                     </iframe>
                 </v-responsive>
             </v-container>
+
 
             <h2><b>Conteúdo:</b></h2>
             <ol>
@@ -110,7 +111,22 @@
                 Esse arquivo agora serve como o coração do seu projeto Node.js, gerenciando todas as suas dependências e
                 configurações.
             </p>
+            <v-container video>
+                <v-responsive :aspect-ratio="16 / 9">
+                    <iframe :src='video' :allow='propriedadesVideo' allowfullscreen>
+                    </iframe>
+                </v-responsive>
+            </v-container>
+
         </v-main>
+        <v-footer>
+            <h3>Referências:</h3>
+            <v-container class="d-block">
+                <p v-for="(ref, index) in listaReferencias" :key="index">
+                    <a :href="ref.link">{{ ref.name }}</a>
+                </p>
+            </v-container>
+        </v-footer>
     </v-app>
 </template>
 
@@ -123,7 +139,11 @@ export default {
             msg: "Instalação e Configuração do Ambiente de Desenvolvimento JavaScript",
             video: 'https://www.youtube.com/embed/VIDEO_ID',
             propriedadesVideo: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
-
+            listaReferencias: [
+                { id: 1, name: "w3schools", link: "https://www.w3schools.com/" },
+                { id: 2, name: "MDN Web Docs", link: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript" },
+                { id: 3, name: "ChatGPT", link: "https://chatgpt.com/" }
+            ],
         }
     },
     components: {
@@ -134,17 +154,8 @@ export default {
 
 
 <style scoped>
-.v-main {
-    padding: 10px 20px 10px 20px !important;
-    /* Ajuste o padding conforme necessário */
-}
-
-ul li {
-    color: #894200
-}
-
-.flexItem {
+.video {
     max-width: 70%;
-    max-height: 70%
+    max-height: 70%;
 }
 </style>

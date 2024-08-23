@@ -7,10 +7,11 @@
             <h1><b>{{ msg }}</b></h1>
             <h4><b>Objetivo:</b></h4>
             <p>
-                Nesta seção, você aprenderá como utilizar a função <code>date</code> em PHP, tanto dentro quanto fora do HTML, para exibir datas e horas formatadas em suas páginas e scripts.
+                Nesta seção, você aprenderá como utilizar a função <code>date</code> em PHP, tanto dentro quanto fora do
+                HTML, para exibir datas e horas formatadas em suas páginas e scripts.
             </p>
-            <v-container class="flex">
-                <v-responsive :aspect-ratio="16 / 9" class="flexItem">
+            <v-container video>
+                <v-responsive :aspect-ratio="16 / 9">
                     <iframe :src='video' :allow='propriedadesVideo' allowfullscreen>
                     </iframe>
                 </v-responsive>
@@ -21,11 +22,12 @@
                     <h2><b>Uso da Função `date` Fora do HTML:</b></h2>
                 </li>
                 <p>
-                    Quando você usa PHP fora de um contexto HTML, como em scripts CLI ou em arquivos `.php`, a função `date` pode ser usada para exibir a data e hora atuais. Veja o exemplo abaixo:
+                    Quando você usa PHP fora de um contexto HTML, como em scripts CLI ou em arquivos `.php`, a função
+                    `date` pode ser usada para exibir a data e hora atuais. Veja o exemplo abaixo:
                 </p>
                 <h2>Linha de Comando</h2>
                 <li>Acesse o <nuxt-link to="/php/playground">PHP Playground</nuxt-link> </li>
-                <li>Note que deixando a  "HTML Preview" selecionada ou não o codigo é executado</li>
+                <li>Note que deixando a "HTML Preview" selecionada ou não o codigo é executado</li>
                 <li>Esse código é aceito tando no terminal quanto no browser</li>
                 <li>Execute o código abaixo</li>
                 <pre>
@@ -36,14 +38,16 @@
 </code>
                 </pre>
                 <li><b>Explicação:</b><br>
-                    Neste exemplo, o formato `"Y-m-d H:i:s"` é usado para exibir o ano, mês, dia, horas, minutos e segundos atuais.
+                    Neste exemplo, o formato `"Y-m-d H:i:s"` é usado para exibir o ano, mês, dia, horas, minutos e
+                    segundos atuais.
                 </li>
                 <br>
                 <li>
                     <h2><b>Uso da Função `date` Dentro do HTML:</b></h2>
                 </li>
                 <p>
-                    Quando você deseja usar a função `date` dentro de um arquivo HTML, pode embutir código PHP para exibir a data. Veja o exemplo abaixo:
+                    Quando você deseja usar a função `date` dentro de um arquivo HTML, pode embutir código PHP para
+                    exibir a data. Veja o exemplo abaixo:
                 </p>
                 <h2>Página Web</h2>
                 <li>Acesse o <nuxt-link to="/php/playground">PHP Playground</nuxt-link> </li>
@@ -65,7 +69,8 @@
                     <h2><b>Uso de Variáveis com `date`:</b></h2>
                 </li>
                 <p>
-                    Você também pode armazenar o resultado da função `date` em uma variável para usar em diferentes partes do seu código. Veja o exemplo abaixo:
+                    Você também pode armazenar o resultado da função `date` em uma variável para usar em diferentes
+                    partes do seu código. Veja o exemplo abaixo:
                 </p>
                 <h2>Página Web</h2>
                 <li>Acesse o <nuxt-link to="/php/playground">PHP Playground</nuxt-link> </li>
@@ -88,7 +93,8 @@
                 <li>
                     <h3>Exibindo Data e Hora em Formatos Diferentes:</h3>
                 </li>
-                <p>Você pode exibir a data e a hora em diversos formatos, utilizando diferentes parâmetros na função `date`. Veja o exemplo abaixo:</p>
+                <p>Você pode exibir a data e a hora em diversos formatos, utilizando diferentes parâmetros na função
+                    `date`. Veja o exemplo abaixo:</p>
                 <li>Acesse o <nuxt-link to="/php/playground">PHP Playground</nuxt-link> </li>
                 <li>Execute o código abaixo</li>
                 <pre>
@@ -101,10 +107,27 @@
 </code>
                 </pre>
                 <li><b>Explicação:</b><br>
-                    Cada linha usa um formato diferente para exibir a data. O formato `"l, F j, Y"` exibe o dia da semana, o mês por extenso, o dia e o ano.
+                    Cada linha usa um formato diferente para exibir a data. O formato `"l, F j, Y"` exibe o dia da
+                    semana, o mês por extenso, o dia e o ano.
                 </li>
             </ul>
+
+            <v-container video>
+                <v-responsive :aspect-ratio="16 / 9">
+                    <iframe :src='video' :allow='propriedadesVideo' allowfullscreen>
+                    </iframe>
+                </v-responsive>
+            </v-container>
         </v-main>
+        <v-footer>
+            <h3>Referências:</h3>
+            <v-container class="d-block">
+                <p v-for="(ref, index) in listaReferencias" :key="index">
+                    <a :href="ref.link">{{ ref.name }}</a>
+                </p>
+            </v-container>
+        </v-footer>
+
     </v-app>
 </template>
 
@@ -114,9 +137,14 @@ export default {
     name: "DateFunction",
     data() {
         return {
-            msg: 'Função date em PHP',
-            video: 'https://www.youtube.com/embed/VIDEO_ID',  // Substitua por um vídeo relevante
+            msg: 'Função Date PHP',
+            video: 'https://www.youtube.com/embed/VIDEO_ID',
             propriedadesVideo: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
+            listaReferencias: [
+                { id: 1, name: "w3schools", link: "https://www.w3schools.com/" },
+                { id: 2, name: "MDN Web Docs", link: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript" },
+                { id: 3, name: "ChatGPT", link: "https://chatgpt.com/" }
+            ],
         }
     },
     components: {
@@ -126,10 +154,7 @@ export default {
 </script>
 
 <style scoped>
-.v-main {
-    padding: 10px 20px 10px 20px !important;
-}
-.flexItem {
+.video {
     max-width: 70%;
     max-height: 70%;
 }

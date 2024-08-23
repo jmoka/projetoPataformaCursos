@@ -13,8 +13,8 @@
   </v-app>
 </template>
 <script>
-import Logo from "~/components/img/logoPHP.vue"
-import Menu from "~/components/php/menuPHP.vue"
+import Logo from "@/components/img/logoLaravel.vue"
+import Menu from "@/components/laravel/menuLaravel.vue"
 export default {
   name: "Index",
   components: {

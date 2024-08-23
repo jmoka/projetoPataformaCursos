@@ -12,16 +12,22 @@
                 com JavaScript, incluindo a instalação de ferramentas essenciais e a criação de um projeto básico.
             </p>
             <!-- Placeholder do vídeo -->
-            <v-container class="flex">
-                <v-responsive :aspect-ratio="16 / 9" class="flexItem">
+            <v-container video>
+                <v-responsive :aspect-ratio="16 / 9">
                     <iframe :src='video' :allow='propriedadesVideo' allowfullscreen>
                     </iframe>
                 </v-responsive>
             </v-container>
 
-            <h2><b>Conteúdo:</b></h2>
-            
         </v-main>
+        <v-footer>
+            <h3>Referências:</h3>
+            <v-container class="d-block">
+                <p v-for="(ref, index) in listaReferencias" :key="index">
+                    <a :href="ref.link">{{ ref.name }}</a>
+                </p>
+            </v-container>
+        </v-footer>
     </v-app>
 </template>
 
@@ -34,7 +40,11 @@ export default {
             msg: "Configuração do Visual Estúdio",
             video: 'https://www.youtube.com/embed/VIDEO_ID',
             propriedadesVideo: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
-
+            listaReferencias: [
+                { id: 1, name: "w3schools", link: "https://www.w3schools.com/" },
+                { id: 2, name: "MDN Web Docs", link: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript" },
+                { id: 3, name: "ChatGPT", link: "https://chatgpt.com/" }
+            ],
         }
     },
     components: {
@@ -45,15 +55,8 @@ export default {
 
 
 <style scoped>
-.v-main {
-    padding: 10px 20px 10px 20px !important;
-    /* Ajuste o padding conforme necessário */
-}
-ul li {
-    color: #894200
-}
-.flexItem {
+.video {
     max-width: 70%;
-    max-height: 70%
+    max-height: 70%;
 }
 </style>

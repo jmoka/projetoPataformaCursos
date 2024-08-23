@@ -4,25 +4,29 @@
             <MenuPHP />
         </v-navigation-drawer>
         <v-main>
-            <h1><b>{{msg}}</b></h1>
+            <h1><b>{{ msg }}</b></h1>
             <h4><b>Objetivo:</b></h4>
             <p>
-                Nesta seção, você aprenderá sobre a importância dos comentários no código PHP e como utilizá-los corretamente para tornar seu código mais legível e compreensível.
+                Nesta seção, você aprenderá sobre a importância dos comentários no código PHP e como utilizá-los
+                corretamente para tornar seu código mais legível e compreensível.
             </p>
-            <v-container class="flex">
-                <v-responsive :aspect-ratio="16 / 9" class="flexItem">
+            <v-container video>
+                <v-responsive :aspect-ratio="16 / 9">
                     <iframe :src='video' :allow='propriedadesVideo' allowfullscreen>
                     </iframe>
                 </v-responsive>
             </v-container>
             <h2><b>4. Comentários no Código</b></h2>
             <p><b>Importância dos Comentários:</b><br>
-                Comentários são partes do código que são ignoradas pelo interpretador PHP. Eles são usados para explicar o que o código faz, tornando-o mais fácil de entender para outras pessoas (ou para você mesmo no futuro). Comentários também podem ser usados para desativar partes do código temporariamente.
+                Comentários são partes do código que são ignoradas pelo interpretador PHP. Eles são usados para explicar
+                o que o código faz, tornando-o mais fácil de entender para outras pessoas (ou para você mesmo no
+                futuro). Comentários também podem ser usados para desativar partes do código temporariamente.
             </p>
             <p><b>Tipos de Comentários:</b></p>
             <ul>
                 <li><b>Comentário de uma linha:</b><br>
-                    Usado para adicionar uma breve explicação ou nota sobre o código. É iniciado com <code>//</code> ou <code>#</code>.
+                    Usado para adicionar uma breve explicação ou nota sobre o código. É iniciado com <code>//</code> ou
+                    <code>#</code>.
                 </li>
                 <pre>
 <code>
@@ -33,7 +37,8 @@
 </code>
                 </pre>
                 <li><b>Comentário de múltiplas linhas:</b><br>
-                    Usado para comentários mais longos ou para desativar várias linhas de código. É iniciado com <code>/*</code> e terminado com <code>*/</code>.
+                    Usado para comentários mais longos ou para desativar várias linhas de código. É iniciado com
+                    <code>/*</code> e terminado com <code>*/</code>.
                 </li>
                 <pre>
 <code>
@@ -65,9 +70,25 @@
 </code>
             </pre>
             <p>
-                Neste exemplo, o comentário de uma linha explica que a variável está sendo definida, enquanto o comentário de múltiplas linhas explica o propósito do código que segue.
+                Neste exemplo, o comentário de uma linha explica que a variável está sendo definida, enquanto o
+                comentário de múltiplas linhas explica o propósito do código que segue.
             </p>
+            <v-container video>
+                <v-responsive :aspect-ratio="16 / 9">
+                    <iframe :src='video' :allow='propriedadesVideo' allowfullscreen>
+                    </iframe>
+                </v-responsive>
+            </v-container>
+
         </v-main>
+        <v-footer>
+            <h3>Referências:</h3>
+            <v-container class="d-block">
+                <p v-for="(ref, index) in listaReferencias" :key="index">
+                    <a :href="ref.link">{{ ref.name }}</a>
+                </p>
+            </v-container>
+        </v-footer>
     </v-app>
 </template>
 
@@ -80,6 +101,11 @@ export default {
             msg: 'Comentários no Código',
             video: 'https://www.youtube.com/embed/VIDEO_ID',  // Substitua por um vídeo relevante
             propriedadesVideo: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
+            listaReferencias: [
+                { id: 1, name: "w3schools", link: "https://www.w3schools.com/" },
+                { id: 2, name: "MDN Web Docs", link: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript" },
+                { id: 3, name: "ChatGPT", link: "https://chatgpt.com/" }
+            ],
         }
     },
     components: {
@@ -89,10 +115,7 @@ export default {
 </script>
 
 <style scoped>
-.v-main {
-    padding: 10px 20px 10px 20px !important;
-}
-.flexItem {
+.video {
     max-width: 70%;
     max-height: 70%;
 }

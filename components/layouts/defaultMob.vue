@@ -46,10 +46,7 @@
 
 <script>
 import Logo from '~/components/img/logoJota.vue';
-import MenuJs from '~/components/js/menuJS.vue'
-
-
-
+import MenuJs from '~/components/js/menuJS.vue';
 export default {
   name: 'defaultPC',
   components: {

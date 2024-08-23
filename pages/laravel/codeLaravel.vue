@@ -1,7 +1,7 @@
 <template>
     <v-app>
         <v-navigation-drawer app>
-            <MenuPHP />
+            <MenuLaravel />
         </v-navigation-drawer>
         <v-main>
             <container>
@@ -13,21 +13,21 @@
 </template>
 
 <script>
-import MenuPHP from '~/components/php/menuPHP.vue'
+import MenuLaravel from '~/components/laravel/menuLaravel.vue'
 export default {
-    name: "codePHP",
+    name: "codeLaravel",
     data() {
         return {
-
             url: "https://onecompiler.com/",
             linguagem: "php",
         }
     },
     components: {
-        MenuPHP
+        MenuLaravel
     }
 }
 </script>
+
 
 <style scoped>
 .video {

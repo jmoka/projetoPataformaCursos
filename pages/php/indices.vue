@@ -8,7 +8,7 @@
         <v-container fluid>
           <v-row>
             <v-col cols="12">
-              <h1>Plano de Estudos em PHP</h1>
+              <h1>{{ msg }}</h1>
               <p class="justficar">Bem-vindo ao curso de PHP! Este curso é dividido em 30 sessões, cobrindo desde os
                 conceitos básicos até tópicos avançados. A cada sessão, você avançará no seu conhecimento e habilidades
                 em PHP.</p>
@@ -164,6 +164,7 @@ export default {
   data() {
     return {
       isDark: true,
+      msg: "Plano de Estudos em PHP",
       video: 'https://www.youtube.com/embed/VIDEO_ID',
       propriedadesVideo: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
     };
@@ -174,11 +175,7 @@ export default {
 };
 </script>
 <style scoped>
-.v-main {
-  padding: 10px 20px 10px 20px !important;
-  /* Ajuste o padding conforme necessário */
-}
-.flexItem {
+.video {
   max-width: 70%;
   max-height: 70%;
 }

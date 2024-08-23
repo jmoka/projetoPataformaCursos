@@ -1,15 +1,18 @@
 <template>
-  <v-app>
-    <v-layout>
-      <v-navigation-drawer permanent v-model="drawer">
-        <Menu />
-      </v-navigation-drawer>
+  <v-app ajsutePagina>
+    <v-navigation-drawer app>
+      <Menu />
+    </v-navigation-drawer>
+    <div>
       <v-main>
-        <v-container class="d-flex justify-center align-center">
+        <div class="center">
           <LgoJS />
-        </v-container>
+        </div>
+
       </v-main>
-    </v-layout>
+    </div>
+
+
   </v-app>
 </template>
 
@@ -21,6 +24,7 @@ export default {
   data() {
     return {
       drawer: false,
+
       title_color: "blue",
       text_color: "black",
       lista: [
@@ -76,5 +80,17 @@ export default {
 };
 </script>
 
+
+
 <style scoped>
+.video {
+  max-width: 70%;
+  max-height: 70%;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 </style>

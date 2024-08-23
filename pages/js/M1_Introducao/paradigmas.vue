@@ -16,8 +16,8 @@
             </p>
 
 
-            <v-container class="flex">
-                <v-responsive :aspect-ratio="16 / 9" class="flexItem">
+            <v-container video>
+                <v-responsive :aspect-ratio="16 / 9">
                     <iframe :src='video' :allow='propriedadesVideo' allowfullscreen>
                     </iframe>
                 </v-responsive>
@@ -123,15 +123,21 @@
                     desenvolvimento web.
                 </p>
             </section>
+            <v-container video>
+                <v-responsive :aspect-ratio="16 / 9">
+                    <iframe :src='video' :allow='propriedadesVideo' allowfullscreen>
+                    </iframe>
+                </v-responsive>
+            </v-container>
 
         </v-main>
         <v-footer>
-            <div>
-                <h2>Referência:</h2>
-                <p v-for="(ref, index) in listaReferencias" :key="ref.id">
+            <h3>Referências:</h3>
+            <v-container class="d-block">
+                <p v-for="(ref, index) in listaReferencias" :key="index">
                     <a :href="ref.link">{{ ref.name }}</a>
                 </p>
-            </div>
+            </v-container>
         </v-footer>
     </v-app>
 </template>
@@ -288,17 +294,8 @@ console.log(pessoa); // Saída: { nome: "Maria", idade: 30 }
 </script>
 
 <style scoped>
-.v-main {
-    padding: 10px 20px 10px 20px !important;
-    /* Ajuste o padding conforme necessário */
-}
-
-.flexItem {
+.video {
     max-width: 70%;
-    max-height: 70%
-}
-
-li {
-    color: #894200
+    max-height: 70%;
 }
 </style>

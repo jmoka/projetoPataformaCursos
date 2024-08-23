@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app ajsutePagina>
     <v-card class="TextMenu">
       <v-card-title><b>Menu PHP</b></v-card-title>
     </v-card>
@@ -17,7 +17,7 @@
         <!-- Subitens -->
         <v-expansion-panel-content v-if="item.open">
           <v-list-item-group>
-            <v-list-item class="full" v-for="subItem in item.subItems" :key="subItem.id">
+            <v-list-item v-for="subItem in item.subItems" :key="subItem.id">
               <nuxt-link :to="subItem.page">
                 {{ subItem.name }}
               </nuxt-link>
@@ -29,13 +29,13 @@
   </v-app>
 </template>
 <script>
-import LgoJS from "~/components/img/logoJSCapa.vue";
+
 export default {
   name: "menuPHP",
   data() {
     return {
       Indice: "/php/indices",
-      CodePHP:"/php/codePHP",
+      CodePHP: "/php/codePHP",
       lista: [
         {
           id: 1,
@@ -73,7 +73,7 @@ export default {
             { id: 6, name: "Quebra de Linha", page: "/php/M3_SintaxBasica/quebraDeLinhaPHP" },
             { id: 7, name: "Concatenação de Strings", page: "/php/M3_SintaxBasica/concatenacao" },
             { id: 7, name: "VerificacaoTipos", page: "/php/M3_SintaxBasica/verificacaoTipos" },
-         
+
           ]
         },
         {
@@ -93,27 +93,24 @@ export default {
       item.open = !item.open;
     }
   },
-  components: {
-    LgoJS
-  }
+
 };
 </script>
 <style scoped>
 .TextMenu {
   background-color: #E38108;
 }
+
 .TextItens {
   color: #894200;
 }
+
 .TextSubItens {
   color: Black;
 }
-.full {
-  margin: 0 !important;
-  padding: 0 !important;
-  border: none;
-}
-.c {
-  max-width: 100%;
+
+.d {
+  margin: 0;
+  padding: 0;
 }
 </style>

@@ -4,22 +4,25 @@
             <MenuPHP />
         </v-navigation-drawer>
         <v-main>
-            <h1><b>{{msg}}</b></h1>
+            <h1><b>{{ msg }}</b></h1>
             <h4><b>Objetivo:</b></h4>
             <p>
-                Nesta seção, você aprenderá sobre os operadores aritméticos e de atribuição em PHP. Vamos explorar como usá-los para realizar operações matemáticas e atribuir valores às variáveis.
+                Nesta seção, você aprenderá sobre os operadores aritméticos e de atribuição em PHP. Vamos explorar como
+                usá-los para realizar operações matemáticas e atribuir valores às variáveis.
             </p>
-            <v-container class="flex">
-                <v-responsive :aspect-ratio="16 / 9" class="flexItem">
+            <v-container video>
+                <v-responsive :aspect-ratio="16 / 9">
                     <iframe :src='video' :allow='propriedadesVideo' allowfullscreen>
                     </iframe>
                 </v-responsive>
             </v-container>
+
             <h2><b>3. Operadores</b></h2>
-            
+
             <h3><b>Operadores Aritméticos:</b></h3>
             <p>
-                Os operadores aritméticos são usados para realizar operações matemáticas básicas. Aqui estão os operadores mais comuns:
+                Os operadores aritméticos são usados para realizar operações matemáticas básicas. Aqui estão os
+                operadores mais comuns:
             </p>
             <ul>
                 <li><b>Adição (+):</b> Soma dois valores.</li>
@@ -45,10 +48,11 @@
     ?&gt;
 </code>
             </pre>
-            
+
             <h3><b>Operadores de Atribuição:</b></h3>
             <p>
-                Os operadores de atribuição são usados para atribuir valores às variáveis. Eles podem ser usados em conjunto com operadores aritméticos para simplificar o código.
+                Os operadores de atribuição são usados para atribuir valores às variáveis. Eles podem ser usados em
+                conjunto com operadores aritméticos para simplificar o código.
             </p>
             <ul>
                 <li><b>=:</b> Atribui um valor a uma variável.</li>
@@ -72,7 +76,21 @@
     ?&gt;
 </code>
             </pre>
+            <v-container video>
+                <v-responsive :aspect-ratio="16 / 9">
+                    <iframe :src='video' :allow='propriedadesVideo' allowfullscreen>
+                    </iframe>
+                </v-responsive>
+            </v-container>
         </v-main>
+        <v-footer>
+            <h3>Referências:</h3>
+            <v-container class="d-block">
+                <p v-for="(ref, index) in listaReferencias" :key="index">
+                    <a :href="ref.link">{{ ref.name }}</a>
+                </p>
+            </v-container>
+        </v-footer>
     </v-app>
 </template>
 
@@ -83,8 +101,13 @@ export default {
     data() {
         return {
             msg: 'Operadores em PHP',
-            video: 'https://www.youtube.com/embed/VIDEO_ID', // Substitua pelo link do vídeo
+            video: 'https://www.youtube.com/embed/VIDEO_ID',
             propriedadesVideo: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
+            listaReferencias: [
+                { id: 1, name: "w3schools", link: "https://www.w3schools.com/" },
+                { id: 2, name: "MDN Web Docs", link: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript" },
+                { id: 3, name: "ChatGPT", link: "https://chatgpt.com/" }
+            ],
         }
     },
     components: {
@@ -94,11 +117,9 @@ export default {
 </script>
 
 <style scoped>
-.v-main {
-    padding: 10px 20px 10px 20px !important;
-}
-.flexItem {
+.video {
     max-width: 70%;
-    max-height: 70%
+    max-height: 70%;
 }
+</style>
 </style>

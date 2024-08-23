@@ -7,15 +7,17 @@
             <h1><b>{{ msg }}</b></h1>
             <h4><b>Objetivo:</b></h4>
             <p>
-                Nesta seção, você aprenderá sobre como usar a função `date()` em PHP para formatar datas e horas. 
-                Vamos explorar os diferentes caracteres (letras) que podem ser usados na função `date()` para construir o formato desejado.
+                Nesta seção, você aprenderá sobre como usar a função `date()` em PHP para formatar datas e horas.
+                Vamos explorar os diferentes caracteres (letras) que podem ser usados na função `date()` para construir
+                o formato desejado.
             </p>
-            <v-container class="flex">
-                <v-responsive :aspect-ratio="16 / 9" class="flexItem">
+            <v-container video>
+                <v-responsive :aspect-ratio="16 / 9">
                     <iframe :src='video' :allow='propriedadesVideo' allowfullscreen>
                     </iframe>
                 </v-responsive>
             </v-container>
+
             <h1><b>Formatação de Datas e Horas com `date()`</b></h1>
             <li>Acesse o <nuxt-link to="/phpPage/playground">PHP Playground</nuxt-link> </li>
             <li>Execute os códigos abaixo</li>
@@ -24,7 +26,8 @@
                     <h2><b>Uso de Letras na Função `date()`:</b></h2>
                 </li>
                 <p>
-                    A função `date()` em PHP permite que você formate datas e horas usando diferentes letras que representam partes específicas da data e da hora.
+                    A função `date()` em PHP permite que você formate datas e horas usando diferentes letras que
+                    representam partes específicas da data e da hora.
                     Abaixo estão algumas das letras mais comuns que você pode usar:
                 </p>
                 <li><b>Dia:</b></li>
@@ -87,7 +90,8 @@ echo "Formato 3: " . date("l, F j, Y") . "&lt;br&gt;";
 </code>
                 </pre>
                 <p>
-                    Cada formato exibirá a data de forma diferente, utilizando as letras especificadas para representar os diversos componentes da data.
+                    Cada formato exibirá a data de forma diferente, utilizando as letras especificadas para representar
+                    os diversos componentes da data.
                 </p>
             </ul>
             <h4><b>Exemplos Adicionais:</b></h4>
@@ -101,10 +105,25 @@ echo date("d/m/Y H:i:s");
 </code>
                 </pre>
                 <li><b>Explicação:</b><br>
-                    Neste exemplo, a data e hora serão exibidas no formato `dd/mm/aaaa hh:mm:ss`, como `18/08/2024 14:35:20`.
+                    Neste exemplo, a data e hora serão exibidas no formato `dd/mm/aaaa hh:mm:ss`, como `18/08/2024
+                    14:35:20`.
                 </li>
             </ul>
+            <v-container video>
+                <v-responsive :aspect-ratio="16 / 9">
+                    <iframe :src='video' :allow='propriedadesVideo' allowfullscreen>
+                    </iframe>
+                </v-responsive>
+            </v-container>
         </v-main>
+        <v-footer>
+            <h3>Referências:</h3>
+            <v-container class="d-block">
+                <p v-for="(ref, index) in listaReferencias" :key="index">
+                    <a :href="ref.link">{{ ref.name }}</a>
+                </p>
+            </v-container>
+        </v-footer>
     </v-app>
 </template>
 
@@ -115,8 +134,13 @@ export default {
     data() {
         return {
             msg: 'Formatação de Datas e Horas com PHP',
-            video: 'https://www.youtube.com/embed/VIDEO_ID',  // Substitua por um vídeo relevante
+            video: 'https://www.youtube.com/embed/VIDEO_ID',
             propriedadesVideo: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
+            listaReferencias: [
+                { id: 1, name: "w3schools", link: "https://www.w3schools.com/" },
+                { id: 2, name: "MDN Web Docs", link: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript" },
+                { id: 3, name: "ChatGPT", link: "https://chatgpt.com/" }
+            ],
         }
     },
     components: {
@@ -126,10 +150,7 @@ export default {
 </script>
 
 <style scoped>
-.v-main {
-    padding: 10px 20px 10px 20px !important;
-}
-.flexItem {
+.video {
     max-width: 70%;
     max-height: 70%;
 }

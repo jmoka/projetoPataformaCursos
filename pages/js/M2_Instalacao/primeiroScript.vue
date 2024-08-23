@@ -13,8 +13,8 @@
                 Este será o primeiro passo para configurar um ambiente de trabalho onde você poderá desenvolver suas
                 habilidades em JavaScript.
             </p>
-            <v-container class="flex">
-                <v-responsive :aspect-ratio="16 / 9" class="flexItem">
+            <v-container video>
+                <v-responsive :aspect-ratio="16 / 9">
                     <iframe :src='video' :allow='propriedadesVideo' allowfullscreen>
                     </iframe>
                 </v-responsive>
@@ -37,14 +37,16 @@
                 <li><b>Passos:</b>
                     <ul>
                         <li>Abra o seu diretório do Windos de sua Preferência.</li>
-                        <li>Crie uma nova pasta para o projeto. Por exemplo, nomeie-a como <code>meu-projeto-js</code></li>
+                        <li>Crie uma nova pasta para o projeto. Por exemplo, nomeie-a como <code>meu-projeto-js</code>
+                        </li>
                         <li>Abra o Visual Studio Code (ou outro editor de sua preferência).</li>
                         <li>Vá em File / Open Folder ou Ctrl+O</li>
                         <li>Abra a paste que você criou</li>
                         <li>Dentro da pasta <code>meu-projeto-js</code>, crie um novo arquivo chamado
                             <code>index.js</code>. Este será o arquivo principal onde escreveremos nosso código
-                            JavaScript.</li>
-                        
+                            JavaScript.
+                        </li>
+
                     </ul>
                 </li>
             </ul>
@@ -115,14 +117,25 @@
             <h4>O que é Playcode.io?</h4>
             <p>Playcode.io é um ambiente de desenvolvimento integrado (IDE) baseado na web que permite aos usuários
                 escrever, executar e compartilhar código JavaScript em tempo real. Ele é útil para desenvolvimento
-                rápido, prototipagem e testes de código sem a necessidade de instalar ferramentas adicionais.</p>             
-            <p>Veja a imagem abaixo e tente Rodar o Código :<a href="https://playcode.io/" target="_blank">Acesse Aqui o Site</a></p>
-            <v-container class="flex"> 
-                <v-responsive :aspect-ratio="16/9" class="flexItem">          
-                    <v-img src="/imgCod/msgCod1.png" clss="iframe " contain></v-img>   
-                </v-responsive>                          
+                rápido, prototipagem e testes de código sem a necessidade de instalar ferramentas adicionais.</p>
+            <p>Veja a imagem abaixo e tente Rodar o Código :<a href="https://playcode.io/" target="_blank">Acesse Aqui o
+                    Site</a></p>
+            <v-container video>
+                <v-responsive :aspect-ratio="16 / 9">
+                    <iframe :src='video' :allow='propriedadesVideo' allowfullscreen>
+                    </iframe>
+                </v-responsive>
             </v-container>
+
         </v-main>
+        <v-footer>
+            <h3>Referências:</h3>
+            <v-container class="d-block">
+                <p v-for="(ref, index) in listaReferencias" :key="index">
+                    <a :href="ref.link">{{ ref.name }}</a>
+                </p>
+            </v-container>
+        </v-footer>
     </v-app>
 </template>
 
@@ -130,6 +143,19 @@
 import MenuJs from '@/components/js/menuJS.vue'
 export default {
     name: "primeiroScript",
+    data() {
+        return {
+            msg: "O que á JavaScript ?",
+            video: '/videos/js/aula1_js.mp4',
+            propriedadesVideo: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
+            listaReferencias: [
+                { id: 1, name: "w3schools", link: "https://www.w3schools.com/" },
+                { id: 2, name: "MDN Web Docs", link: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript" },
+                { id: 3, name: "ChatGPT", link: "https://chatgpt.com/" }
+            ],
+        }
+
+    },
     components: {
         MenuJs
     }
@@ -138,15 +164,9 @@ export default {
 
 
 
-
 <style scoped>
-.v-main {
-    padding: 10px 20px 10px 20px !important;
-    /* Ajuste o padding conforme necessário */
-}
-
-.flexItem {
+.video {
     max-width: 70%;
-    max-height: 70%
+    max-height: 70%;
 }
 </style>

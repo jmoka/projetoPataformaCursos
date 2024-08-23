@@ -4,23 +4,27 @@
             <MenuPHP />
         </v-navigation-drawer>
         <v-main>
-            <h1><b>{{msg}}</b></h1>
+            <h1><b>{{ msg }}</b></h1>
             <h4><b>Objetivo:</b></h4>
             <p>
-                Nesta seção, você aprenderá a declarar e usar variáveis em PHP, além de entender a sintaxe básica e ver exemplos práticos.
+                Nesta seção, você aprenderá a declarar e usar variáveis em PHP, além de entender a sintaxe básica e ver
+                exemplos práticos.
             </p>
-            <v-container class="flex">
-                <v-responsive :aspect-ratio="16 / 9" class="flexItem">
+            <v-container video>
+                <v-responsive :aspect-ratio="16 / 9">
                     <iframe :src='video' :allow='propriedadesVideo' allowfullscreen>
                     </iframe>
                 </v-responsive>
             </v-container>
+
             <h2><b>1. Declaração de Variáveis</b></h2>
             <p><b>O que são Variáveis?</b><br>
-                Variáveis são "caixinhas" onde você pode guardar informações, como números ou texto. Em PHP, variáveis começam com o símbolo <code>$</code>.
+                Variáveis são "caixinhas" onde você pode guardar informações, como números ou texto. Em PHP, variáveis
+                começam com o símbolo <code>$</code>.
             </p>
             <p><b>Como Declarar uma Variável:</b><br>
-                Para criar uma variável, você usa o símbolo <code>$</code>, seguido pelo nome da variável e atribui um valor a ela usando o sinal de igual (<code>=</code>).
+                Para criar uma variável, você usa o símbolo <code>$</code>, seguido pelo nome da variável e atribui um
+                valor a ela usando o sinal de igual (<code>=</code>).
             </p>
             <pre>
 <code>
@@ -59,7 +63,21 @@
     ?&gt;
 </code>
             </pre>
+            <v-container video>
+                <v-responsive :aspect-ratio="16 / 9">
+                    <iframe :src='video' :allow='propriedadesVideo' allowfullscreen>
+                    </iframe>
+                </v-responsive>
+            </v-container>
         </v-main>
+        <v-footer>
+            <h3>Referências:</h3>
+            <v-container class="d-block">
+                <p v-for="(ref, index) in listaReferencias" :key="index">
+                    <a :href="ref.link">{{ ref.name }}</a>
+                </p>
+            </v-container>
+        </v-footer>
     </v-app>
 </template>
 
@@ -70,8 +88,13 @@ export default {
     data() {
         return {
             msg: 'Variáveis em PHP',
-            video: 'https://www.youtube.com/embed/VIDEO_ID', // Substitua pelo link do vídeo
+            video: 'https://www.youtube.com/embed/VIDEO_ID',
             propriedadesVideo: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
+            listaReferencias: [
+                { id: 1, name: "w3schools", link: "https://www.w3schools.com/" },
+                { id: 2, name: "MDN Web Docs", link: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript" },
+                { id: 3, name: "ChatGPT", link: "https://chatgpt.com/" }
+            ],
         }
     },
     components: {
@@ -81,11 +104,8 @@ export default {
 </script>
 
 <style scoped>
-.v-main {
-    padding: 10px 20px 10px 20px !important;
-}
-.flexItem {
+.video {
     max-width: 70%;
-    max-height: 70%
+    max-height: 70%;
 }
 </style>

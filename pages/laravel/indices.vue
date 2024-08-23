@@ -292,7 +292,7 @@ export default {
     MenuJs
   },
   data: () => ({
-    msg: "Introdução ao JavaScript",
+    msg: "Introdução ao Laravel",
     video: 'https://www.youtube.com/embed/VIDEO_ID',
     propriedadesVideo: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
   })

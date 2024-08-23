@@ -20,7 +20,7 @@
             </v-container>
 
             <h2><b>Conteúdo:</b></h2>
-            
+
         </v-main>
     </v-app>
 </template>
@@ -44,16 +44,4 @@ export default {
 </script>
 
 
-<style scoped>
-.v-main {
-    padding: 10px 20px 10px 20px !important;
-    /* Ajuste o padding conforme necessário */
-}
-ul li {
-    color: #894200
-}
-.flexItem {
-    max-width: 70%;
-    max-height: 70%
-}
-</style>
+<style scoped></style>

@@ -12,16 +12,12 @@
                 Nesta aula, você aprenderá sobre o uso do modo estrito ("use strict") em JavaScript, por que ele é
                 importante, como ele pode ajudar a evitar erros comuns, e como aplicá-lo em seu código.
             </p>
-            <v-container class="flex">
-            <v-responsive :aspect-ratio="16 / 9" class="flexItem">
-              <iframe 
-                :src='videoConclusao'
-                :allow='propriedadesVideo'
-                allowfullscreen
-              >
-              </iframe>
-            </v-responsive>
-          </v-container>
+            <v-container video teste>
+                <v-responsive :aspect-ratio="16 / 9">
+                    <iframe :src='videoConclusao' :allow='propriedadesVideo' allowfullscreen>
+                    </iframe>
+                </v-responsive>
+            </v-container>
             <h2><b>Conteúdo:</b></h2>
             <ol>
                 <li><b>O que é "use strict"?</b></li>
@@ -34,9 +30,12 @@
 
             <h2><b>1. O que é "use strict"?</b></h2>
             <p>
-                O <code>"use strict"</code> é uma <u class="destaque">diretiva introduzida no ECMAScript 5 (ES5)</u> que permite optar por uma
-                versão mais restritiva do JavaScript. Ao ativar o modo estrito, você informa ao <u class="destaque">JavaScript para operar
-                    de maneira mais rigorosa</u>, evitando o uso de certas práticas que podem levar a erros ou comportamentos
+                O <code>"use strict"</code> é uma <u class="destaque">diretiva introduzida no ECMAScript 5 (ES5)</u> que
+                permite optar por uma
+                versão mais restritiva do JavaScript. Ao ativar o modo estrito, você informa ao <u
+                    class="destaque">JavaScript para operar
+                    de maneira mais rigorosa</u>, evitando o uso de certas práticas que podem levar a erros ou
+                comportamentos
                 inesperados.
             </p>
 
@@ -146,16 +145,12 @@ pessoa.nome = "Maria"; // Erro: Não pode modificar um objeto congelado
                 estrito não seja obrigatório, seu uso é altamente recomendado, especialmente em projetos novos ou ao
                 refatorar código existente.
             </p>
-            <v-container class="flex">
-            <v-responsive :aspect-ratio="16 / 9" class="flexItem">
-              <iframe 
-                :src='videoConclusao'
-                :allow='propriedadesVideo'
-                allowfullscreen
-              >
-              </iframe>
-            </v-responsive>
-          </v-container>
+            <v-container video>
+                <v-responsive :aspect-ratio="16 / 9">
+                    <iframe :src='videoConclusao' :allow='propriedadesVideo' allowfullscreen>
+                    </iframe>
+                </v-responsive>
+            </v-container>
         </v-main>
     </v-app>
 </template>
@@ -165,10 +160,10 @@ import MenuJs from '~/components/js/menuJS.vue'
 export default {
     name: "useStrict",
     data: () => ({
-      video: 'https://www.youtube.com/embed/VIDEO_ID',
-      videoConclusao: 'https://www.youtube.com/embed/VIDEO_ID',
-      propriedadesVideo: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
-      msg:"Uso do Modo Restrict"  
+        video: 'https://www.youtube.com/embed/VIDEO_ID',
+        videoConclusao: 'https://www.youtube.com/embed/VIDEO_ID',
+        propriedadesVideo: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
+        msg: "Uso do Modo Restrict"
     }),
     components: {
         MenuJs
@@ -179,16 +174,8 @@ export default {
 
 
 <style scoped>
-.v-main {
-    padding: 10px 20px 10px 20px !important;
-    /* Ajuste o padding conforme necessário */
-}
-li{
-    color:#894200
-}
-
-.flexItem {
+.video {
     max-width: 70%;
-    max-height: 70%
+    max-height: 70%;
 }
 </style>

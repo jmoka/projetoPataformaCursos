@@ -17,8 +17,8 @@
                     funcionalidades e melhorias introduzidas nas versões mais recentes.
                 </p>
 
-                <v-container class="flex">
-                    <v-responsive :aspect-ratio="16 / 9" class="flexItem">
+                <v-container video>
+                    <v-responsive :aspect-ratio="16 / 9">
                         <iframe :src='video' :allow='propriedadesVideo' allowfullscreen>
                         </iframe>
                     </v-responsive>
@@ -63,7 +63,8 @@
                 <ul>
                     <li>
                         <p>A linguagem foi padronizada pela <b>ECMA International</b> com a especificação
-                            <b>ECMAScript</b> </p>
+                            <b>ECMAScript</b>
+                        </p>
                     </li>
                     <li>
                         <p>O ECMAScript 1 foi publicado como o primeiro padrão oficial</p>
@@ -212,19 +213,39 @@
                 </ul>
             </div>
 
+            <v-container video>
+                <v-responsive :aspect-ratio="16 / 9">
+                    <iframe :src='video' :allow='propriedadesVideo' allowfullscreen>
+                    </iframe>
+                </v-responsive>
+            </v-container>
         </v-main>
+        <v-footer>
+            <h3>Referências:</h3>
+            <v-container class="d-block">
+                <p v-for="(ref, index) in listaReferencias" :key="index">
+                    <a :href="ref.link">{{ ref.name }}</a>
+                </p>
+            </v-container>
+        </v-footer>
+
     </v-app>
 </template>
 
 <script>
 import MenuJs from '~/components/js/menuJS.vue'
 export default {
-    name:"historiaJS",
+    name: "historiaJS",
     data() {
         return {
             msg: 'História e Evolução do JavaScript',
             video: 'https://www.youtube.com/embed/VIDEO_ID',
             propriedadesVideo: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
+            listaReferencias: [
+                { id: 1, name: "w3schools", link: "https://www.w3schools.com/" },
+                { id: 2, name: "MDN Web Docs", link: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript" },
+                { id: 3, name: "ChatGPT", link: "https://chatgpt.com/" }
+            ],
         }
     },
     components: {
@@ -235,14 +256,8 @@ export default {
 </script>
 
 <style scoped>
-.v-main {
-    padding: 10px 20px 10px 20px !important;
-    /* Ajuste o padding conforme necessário */
-}
-
-
-.flexItem {
+.video {
     max-width: 70%;
-    max-height: 70%
+    max-height: 70%;
 }
 </style>
