@@ -6,7 +6,8 @@
     <v-card>
       <v-card-subtitle class="text-red-darken-1">
         <nuxt-link :to=Indice><b>Índeces</b></nuxt-link> <br><br>
-        <nuxt-link :to=CodeJS><b>Código PHP</b></nuxt-link>
+        <nuxt-link :to=CodeJS><b>Código JS</b></nuxt-link> <br><br>
+        <a :href=Doc :target=Target_Novatela><b>Documentação</b></a>
       </v-card-subtitle>
     </v-card>
     <v-container>
@@ -40,6 +41,8 @@ export default {
     return {
       Indice: "/js/indices",
       CodeJS: "/js/codeJS",
+      Doc: "https://www.w3schools.com/Js",
+      Target_Novatela: "_blank",
       lista: [
         {
           id: 1,
@@ -368,7 +371,6 @@ export default {
 
 };
 </script>
-
 <style scoped>
 .TextMenu {
   background-color: #E38108;
@@ -380,5 +382,10 @@ export default {
 
 .TextSubItens {
   color: Black;
+}
+
+.d {
+  margin: 0;
+  padding: 0;
 }
 </style>

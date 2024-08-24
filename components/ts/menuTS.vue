@@ -6,7 +6,8 @@
     <v-card>
       <v-card-subtitle class="text-red-darken-1">
         <nuxt-link :to=Indice><b>Índeces</b></nuxt-link> <br><br>
-        <nuxt-link :to=CodeTS><b>Código PHP</b></nuxt-link>
+        <nuxt-link :to=CodeTS><b>Código JS</b></nuxt-link> <br><br>
+        <a :href=Doc :target=Target_Novatela><b>Documentação</b></a>
       </v-card-subtitle>
     </v-card>
     <v-container>
@@ -40,6 +41,8 @@ export default {
     return {
       Indice: "/ts/indices",
       CodeTS: "/ts/codeTS",
+      Doc: "https://www.typescriptlang.org/docs/",
+      Target_Novatela: "_blank",
       lista: [
         {
           id: 1,

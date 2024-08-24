@@ -1,295 +1,256 @@
 <template>
   <v-app>
-    <v-container fluid>
-      <!-- Menu -->
-      <v-navigation-drawer app>
-        <MenuJs />
-      </v-navigation-drawer>
+    <!-- Menu -->
+    <v-navigation-drawer app>
+      <MenuLaravel />
+    </v-navigation-drawer>
 
-      <!-- Main Content -->
-      <v-main>
-        <v-container fluid>
-          <v-row>
-            <v-col cols="12">
-              <!-- Course Introduction -->
-              <h1>{{ msg }}</h1>
-              <p class="justificar">
-                Bem-vindo ao curso de Introdução ao JavaScript! Neste curso, você começará sua jornada no
-                desenvolvimento
-                web com uma das linguagens de programação mais populares e versáteis do mundo. JavaScript é essencial
-                para criar sites interativos e dinâmicos e é amplamente utilizado em desenvolvimento front-end e
-                back-end.
-              </p>
+    <!-- Main Content -->
+    <v-main>
+      <v-container fluid>
+        <v-row>
+          <v-col cols="12">
+            <!-- Course Introduction -->
+            <h1>{{ msg }}</h1>
+            <p class="justificar">
+              Bem-vindo ao curso de Laravel! Neste curso, você aprenderá a criar aplicações web robustas e escaláveis
+              utilizando o framework PHP mais popular do mercado. O Laravel oferece uma sintaxe expressiva e elegante,
+              facilitando o desenvolvimento de soluções complexas de forma ágil e eficiente.
+            </p>
 
-              <!-- Embedded Video -->
-              <v-container video>
-                <v-responsive :aspect-ratio="16 / 9">
-                  <iframe :src='video' :allow='propriedadesVideo' allowfullscreen>
-                  </iframe>
-                </v-responsive>
-              </v-container>
-              <!-- Course Content -->
-              <h2><strong>1. Introdução ao JavaScript</strong></h2>
-              <ul>
-                <li>O que é JavaScript?</li>
-                <li>História e Evolução</li>
-                <li>Paradigma</li>
-              </ul>
+            <!-- Embedded Video -->
+            <v-container video>
+              <v-responsive :aspect-ratio="16 / 9">
+                <iframe :src="video" :allow="propriedadesVideo" allowfullscreen></iframe>
+              </v-responsive>
+            </v-container>
 
-              <h2><strong>2. Instalação e Configuração do Ambiente, Primeiro Código JavaScript</strong></h2>
-              <ul>
-                <li>Resumo Geral</li>
-                <li>Instalação do Visual Studio Code</li>
-                <li>Instalação do Node.js</li>
-                <li>Instalação do pacote JSON (NPM init)</li>
-                <li>Configuração do VS Code</li>
-                <li>Primeiro Script</li>
-              </ul>
+            <!-- Course Content -->
+            <h2><strong>1. Introdução ao Laravel</strong></h2>
+            <ul>
+              <li>O que é Laravel?</li>
+              <li>História e Filosofia</li>
+              <li>Características Principais</li>
+            </ul>
 
-              <h2><strong>3. Sintaxe e Tipos de Dados</strong></h2>
-              <ul>
-                <li>Modo Restrito</li>
-                <li>Congelamento de Objetos</li>
-                <li>Variáveis</li>
-                <li>Tipos de Dados</li>
-                <li>Conversão de Tipos</li>
-                <li>Operadores</li>
-                <li>Comentários</li>
-                <li>Entrada de Dados</li>
-                <li>Concatenação</li>
-                <li>Interpolação</li>
-              </ul>
+            <h2><strong>2. Configuração do Ambiente de Desenvolvimento</strong></h2>
+            <ul>
+              <li>Instalação do Composer</li>
+              <li>Instalação do Laravel</li>
+              <li>Configuração do Servidor Local</li>
+            </ul>
 
-              <h2><strong>4. Estruturas de Controle</strong></h2>
-              <ul>
-                <li>Condicionais (if, else, switch)</li>
-                <li>Laços de Repetição (for, while, do-while)</li>
-                <li>Controle de Fluxo (break, continue)</li>
-              </ul>
+            <h2><strong>3. Estrutura do Projeto Laravel</strong></h2>
+            <ul>
+              <li>Visão Geral dos Diretórios</li>
+              <li>Configuração Básica</li>
+              <li>Arquivos de Rotas e Controladores</li>
+            </ul>
 
-              <h2><strong>5. Funções</strong></h2>
-              <ul>
-                <li>Declaração de Funções</li>
-                <li>Expressões de Funções</li>
-                <li>Funções Anônimas e Arrow Functions</li>
-                <li>Parâmetros e Retorno</li>
-              </ul>
+            <h2><strong>4. Rotas e Controladores</strong></h2>
+            <ul>
+              <li>Definindo Rotas</li>
+              <li>Controladores e Métodos</li>
+              <li>Middlewares</li>
+            </ul>
 
-              <h2><strong>6. Objetos e Arrays</strong></h2>
-              <ul>
-                <li>Criação e Manipulação de Objetos</li>
-                <li>Métodos e Propriedades de Objetos</li>
-                <li>Manipulação de Arrays</li>
-                <li>Métodos de Arrays (map, filter, reduce)</li>
-              </ul>
+            <h2><strong>5. Blade Templates</strong></h2>
+            <ul>
+              <li>Introdução ao Blade</li>
+              <li>Diretivas e Componentes</li>
+              <li>Layouts e Seções</li>
+            </ul>
 
-              <h2><strong>7. DOM (Document Object Model)</strong></h2>
-              <ul>
-                <li>Introdução ao DOM</li>
-                <li>Seleção e Manipulação de Elementos</li>
-                <li>Eventos e Listeners</li>
-                <li>Criação e Remoção de Elementos</li>
-              </ul>
+            <h2><strong>6. Banco de Dados e Eloquent ORM</strong></h2>
+            <ul>
+              <li>Configuração do Banco de Dados</li>
+              <li>Migrations</li>
+              <li>Seeders e Factories</li>
+              <li>Introdução ao Eloquent ORM</li>
+            </ul>
 
-              <h2><strong>8. Eventos e Manipulação</strong></h2>
-              <ul>
-                <li>Tipos de Eventos</li>
-                <li>Manipulação de Eventos</li>
-                <li>Delegação de Eventos</li>
-                <li>Eventos Customizados</li>
-              </ul>
+            <h2><strong>7. Relacionamentos no Eloquent</strong></h2>
+            <ul>
+              <li>Relacionamentos One-to-One</li>
+              <li>Relacionamentos One-to-Many</li>
+              <li>Relacionamentos Many-to-Many</li>
+              <li>Relacionamentos Polimórficos</li>
+            </ul>
 
-              <h2><strong>9. AJAX e Fetch API</strong></h2>
-              <ul>
-                <li>Introdução ao AJAX</li>
-                <li>Uso da Fetch API</li>
-                <li>Requisições GET e POST</li>
-                <li>Manipulação de Respostas e Erros</li>
-              </ul>
+            <h2><strong>8. Autenticação e Autorização</strong></h2>
+            <ul>
+              <li>Sistema de Autenticação Integrado</li>
+              <li>Criação de Módulos de Login</li>
+              <li>Autorização de Acesso e Policies</li>
+            </ul>
 
-              <h2><strong>10. Programação Assíncrona</strong></h2>
-              <ul>
-                <li>Introdução às Promises</li>
-                <li>Async/Await</li>
-                <li>Tratamento de Erros em Código Assíncrono</li>
-                <li>Corrida de Promises</li>
-              </ul>
+            <h2><strong>9. APIs RESTful</strong></h2>
+            <ul>
+              <li>Introdução a APIs no Laravel</li>
+              <li>Construção de APIs RESTful</li>
+              <li>Autenticação de APIs</li>
+              <li>Rate Limiting e Segurança</li>
+            </ul>
 
-              <h2><strong>11. Manipulação de Erros</strong></h2>
-              <ul>
-                <li>Try/Catch</li>
-                <li>Lançamento de Erros</li>
-                <li>Tratamento Global de Erros</li>
-                <li>Debugging e Ferramentas de Depuração</li>
-              </ul>
+            <h2><strong>10. Testes Automatizados</strong></h2>
+            <ul>
+              <li>Testes Unitários com PHPUnit</li>
+              <li>Testes de Integração</li>
+              <li>Testes de APIs</li>
+            </ul>
 
-              <h2><strong>12. Orientação a Objetos</strong></h2>
-              <ul>
-                <li>Conceitos de Orientação a Objetos</li>
-                <li>Criação de Classes e Objetos</li>
-                <li>Herança e Polimorfismo</li>
-                <li>Encapsulamento e Abstração</li>
-              </ul>
+            <h2><strong>11. Filas e Jobs</strong></h2>
+            <ul>
+              <li>Introdução às Filas</li>
+              <li>Processamento Assíncrono com Jobs</li>
+              <li>Drivers de Filas</li>
+            </ul>
 
-              <h2><strong>13. Módulos e Importação</strong></h2>
-              <ul>
-                <li>Introdução aos Módulos JavaScript</li>
-                <li>Exportação e Importação de Módulos</li>
-                <li>Uso de ES6 Modules</li>
-                <li>Gerenciamento de Dependências</li>
-              </ul>
+            <h2><strong>12. Eventos e Listeners</strong></h2>
+            <ul>
+              <li>Conceitos de Eventos</li>
+              <li>Criando e Despachando Eventos</li>
+              <li>Listeners e Manipuladores de Eventos</li>
+            </ul>
 
-              <h2><strong>14. Manipulação de Strings</strong></h2>
-              <ul>
-                <li>Métodos de Strings</li>
-                <li>Interpolação de Strings</li>
-                <li>Expressões Regulares</li>
-                <li>Manipulação Avançada de Strings</li>
-              </ul>
+            <h2><strong>13. Email e Notificações</strong></h2>
+            <ul>
+              <li>Configuração de Emails</li>
+              <li>Envio de Emails com Mailable</li>
+              <li>Notificações via Email e SMS</li>
+            </ul>
 
-              <h2><strong>15. Trabalhando com Datas e Horas</strong></h2>
-              <ul>
-                <li>Objetos Date</li>
-                <li>Manipulação de Datas</li>
-                <li>Formatação de Datas e Horas</li>
-                <li>Bibliotecas para Datas (moment.js, date-fns)</li>
-              </ul>
+            <h2><strong>14. Trabalhando com Arquivos</strong></h2>
+            <ul>
+              <li>Upload de Arquivos</li>
+              <li>Gerenciamento de Arquivos e Diretórios</li>
+              <li>Serviços de Armazenamento Externo</li>
+            </ul>
 
-              <h2><strong>16. Armazenamento Local</strong></h2>
-              <ul>
-                <li>LocalStorage e SessionStorage</li>
-                <li>Cookies</li>
-                <li>Manipulação e Persistência de Dados</li>
-                <li>Segurança e Limitações</li>
-              </ul>
+            <h2><strong>15. Serviços e Repositórios</strong></h2>
+            <ul>
+              <li>Introdução ao Padrão Repository</li>
+              <li>Serviços e Classes Helper</li>
+              <li>Injeção de Dependências</li>
+            </ul>
 
-              <h2><strong>17. Web APIs e Browser</strong></h2>
-              <ul>
-                <li>Introdução às Web APIs</li>
-                <li>Manipulação de Localização e Geolocalização</li>
-                <li>Armazenamento e Cookies</li>
-                <li>Web Workers</li>
-              </ul>
+            <h2><strong>16. Cache e Otimização</strong></h2>
+            <ul>
+              <li>Cache de Dados</li>
+              <li>Otimização de Consultas</li>
+              <li>Cache de Vistas</li>
+            </ul>
 
-              <h2><strong>18. Segurança em JavaScript</strong></h2>
-              <ul>
-                <li>Proteção contra XSS</li>
-                <li>Proteção contra CSRF</li>
-                <li>Segurança em Armazenamento Local</li>
-                <li>Práticas de Programação Segura</li>
-              </ul>
+            <h2><strong>17. Segurança no Laravel</strong></h2>
+            <ul>
+              <li>Proteção contra CSRF</li>
+              <li>Validação de Dados</li>
+              <li>Encriptação e Hashing</li>
+            </ul>
 
-              <h2><strong>19. Testes em JavaScript</strong></h2>
-              <ul>
-                <li>Introdução aos Testes Unitários</li>
-                <li>Ferramentas de Teste (Jest, Mocha)</li>
-                <li>Testando Funções e Componentes</li>
-                <li>Testes de Integração</li>
-              </ul>
+            <h2><strong>18. Implementação de APIs com GraphQL</strong></h2>
+            <ul>
+              <li>Introdução ao GraphQL</li>
+              <li>Construção de APIs com GraphQL</li>
+              <li>Consultas e Mutations</li>
+            </ul>
 
-              <h2><strong>20. Frameworks e Bibliotecas</strong></h2>
-              <ul>
-                <li>Introdução a Frameworks (React, Angular, Vue.js)</li>
-                <li>Comparação e Escolha de Frameworks</li>
-                <li>Uso de Bibliotecas Populares (Lodash, Axios)</li>
-                <li>Criação de Bibliotecas</li>
-              </ul>
+            <h2><strong>19. Internacionalização (i18n)</strong></h2>
+            <ul>
+              <li>Traduções de Vistas e Mensagens</li>
+              <li>Gerenciamento de Idiomas</li>
+              <li>Localização de Datas e Números</li>
+            </ul>
 
-              <h2><strong>21. Design Patterns</strong></h2>
-              <ul>
-                <li>Introdução a Design Patterns</li>
-                <li>Singleton</li>
-                <li>Factory</li>
-                <li>Observer</li>
-                <li>Modular e MVC</li>
-                <li>Implementação Prática</li>
-              </ul>
+            <h2><strong>20. Logs e Monitoramento</strong></h2>
+            <ul>
+              <li>Configuração de Logs</li>
+              <li>Monitoramento de Aplicações</li>
+              <li>Alertas e Notificações de Erros</li>
+            </ul>
 
-              <h2><strong>22. Deploy e Publicação</strong></h2>
-              <ul>
-                <li>Processo de Deploy</li>
-                <li>Hospedagem em Servidores</li>
-                <li>CI/CD (Integração e Entrega Contínua)</li>
-                <li>Publicação em Repositórios e NPM</li>
-              </ul>
+            <h2><strong>21. Implementação de WebSockets</strong></h2>
+            <ul>
+              <li>Introdução ao WebSockets</li>
+              <li>Configuração e Uso</li>
+              <li>Notificações em Tempo Real</li>
+            </ul>
 
-              <h2><strong>23. Boas Práticas de Programação</strong></h2>
-              <ul>
-                <li>Estilos de Código e Linters</li>
-                <li>Documentação e Comentários</li>
-                <li>Refatoração de Código</li>
-                <li>Gerenciamento de Versões</li>
-              </ul>
+            <h2><strong>22. Deploy e Publicação</strong></h2>
+            <ul>
+              <li>Configuração de Ambiente de Produção</li>
+              <li>Deploy Automatizado</li>
+              <li>Integração Contínua (CI/CD)</li>
+            </ul>
 
-              <h2><strong>24. Introdução ao TypeScript</strong></h2>
-              <ul>
-                <li>O que é TypeScript?</li>
-                <li>Configuração e Integração com JavaScript</li>
-                <li>Tipos e Interfaces</li>
-                <li>Transpiração e Compilação</li>
-              </ul>
+            <h2><strong>23. Desenvolvimento de Pacotes no Laravel</strong></h2>
+            <ul>
+              <li>Introdução ao Desenvolvimento de Pacotes</li>
+              <li>Publicação de Pacotes no Packagist</li>
+              <li>Versionamento e Atualização de Pacotes</li>
+            </ul>
 
-              <h2><strong>25. Integração com Backend</strong></h2>
-              <ul>
-                <li>Conexão com APIs REST</li>
-                <li>Uso de WebSockets</li>
-                <li>Autenticação e Autorização</li>
-                <li>Comunicação com Backend</li>
-              </ul>
+            <h2><strong>24. Laravel e Vue.js</strong></h2>
+            <ul>
+              <li>Integração do Laravel com Vue.js</li>
+              <li>Construção de SPAs</li>
+              <li>Gerenciamento de Estado com Vuex</li>
+            </ul>
 
-              <h2><strong>26. Desenvolvimento Mobile com JavaScript</strong></h2>
-              <ul>
-                <li>Introdução ao Desenvolvimento Mobile</li>
-                <li>Frameworks para Mobile (React Native, Ionic)</li>
-                <li>Criação e Testes de Aplicações Mobile</li>
-                <li>Publicação em Stores</li>
-              </ul>
+            <h2><strong>25. Laravel e Inertia.js</strong></h2>
+            <ul>
+              <li>O que é Inertia.js?</li>
+              <li>Configuração e Uso com Laravel</li>
+              <li>Criação de Aplicações Dinâmicas</li>
+            </ul>
 
-              <h2><strong>27. APIs e Integrações</strong></h2>
-              <ul>
-                <li>Consumo de APIs Externas</li>
-                <li>Autenticação e Autorização em APIs</li>
-                <li>Integração com Serviços de Terceiros</li>
-                <li>Manipulação de Dados em APIs</li>
-              </ul>
+            <h2><strong>26. Laravel Livewire</strong></h2>
+            <ul>
+              <li>Construção de Interfaces Reativas com Livewire</li>
+              <li>Integração com Blade</li>
+              <li>Manutenção de Estado em Componentes</li>
+            </ul>
 
-              <h2><strong>28. Performance e Otimização</strong></h2>
-              <ul>
-                <li>Otimização de Código</li>
-                <li>Carregamento Assíncrono</li>
-                <li>Minificação e Bundling</li>
-                <li>Boas Práticas de Performance</li>
-              </ul>
+            <h2><strong>27. Integração com Serviços Externos</strong></h2>
+            <ul>
+              <li>Conexão com Serviços de Terceiros</li>
+              <li>APIs de Pagamento</li>
+              <li>Integração com Redes Sociais</li>
+            </ul>
 
-              <h2><strong>29. Acessibilidade</strong></h2>
-              <ul>
-                <li>Princípios de Acessibilidade</li>
-                <li>Testes de Acessibilidade</li>
-                <li>Implementação de Acessibilidade</li>
-                <li>Ferramentas de Acessibilidade</li>
-              </ul>
+            <h2><strong>28. Testes de Performance</strong></h2>
+            <ul>
+              <li>Testando a Performance de Aplicações Laravel</li>
+              <li>Otimização de Código e Consultas</li>
+              <li>Ferramentas de Benchmarking</li>
+            </ul>
 
-              <h2><strong>30. Conclusão e Próximos Passos</strong></h2>
-              <ul>
-                <li>Revisão dos Conceitos</li>
-                <li>Projetos e Desafios</li>
-                <li>Recursos e Comunidades</li>
-                <li>Próximos Passos na Carreira</li>
-              </ul>
-            </v-col>
-          </v-row>
-        </v-container>
-      </v-main>
-    </v-container>
+            <h2><strong>29. Laravel e WebAssembly</strong></h2>
+            <ul>
+              <li>Introdução ao WebAssembly</li>
+              <li>Integração do Laravel com WebAssembly</li>
+              <li>Execução de Códigos em WebAssembly</li>
+            </ul>
+
+            <h2><strong>30. Conclusão e Próximos Passos</strong></h2>
+            <ul>
+              <li>Recapitulação dos Conceitos</li>
+              <li>Materiais Complementares</li>
+              <li>Desafios e Projetos Finais</li>
+            </ul>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-main>
   </v-app>
 </template>
 
 <script>
-import MenuJs from '@/components/js/menuJS.vue'
+import MenuLaravel from '~/components/laravel/menuLaravel.vue'
 
 export default {
   components: {
-    MenuJs
+    MenuLaravel
   },
   data: () => ({
     msg: "Introdução ao Laravel",

@@ -6,26 +6,29 @@
     <v-card>
       <v-card-subtitle class="text-red-darken-1">
         <nuxt-link :to=Indice><b>Índeces</b></nuxt-link> <br><br>
-        <nuxt-link :to=CodePHP><b>Código PHP</b></nuxt-link>
+        <nuxt-link :to=CodePHP><b>Código PHP</b></nuxt-link><br><br>
+        <a :href=Doc :target=Target_Novatela><b>Documentação</b></a>
       </v-card-subtitle>
     </v-card>
-    <v-expansion-panels>
-      <v-expansion-panel v-for="item in lista" :key="item.id">
-        <v-expansion-panel-header>
-          <b>{{ item.name }}</b>
-        </v-expansion-panel-header>
-        <!-- Subitens -->
-        <v-expansion-panel-content v-if="item.open">
-          <v-list-item-group>
-            <v-list-item v-for="subItem in item.subItems" :key="subItem.id">
-              <nuxt-link :to="subItem.page">
-                {{ subItem.name }}
-              </nuxt-link>
-            </v-list-item>
-          </v-list-item-group>
-        </v-expansion-panel-content>
-      </v-expansion-panel>
-    </v-expansion-panels>
+    <v-container>
+      <v-expansion-panels>
+        <v-expansion-panel v-for="item in lista" :key="item.id">
+          <v-expansion-panel-header>
+            <b>{{ item.name }}</b>
+          </v-expansion-panel-header>
+          <!-- Subitens -->
+          <v-expansion-panel-content v-if="item.open">
+            <v-list-item-group>
+              <v-list-item v-for="subItem in item.subItems" :key="subItem.id">
+                <nuxt-link :to="subItem.page">
+                  {{ subItem.name }}
+                </nuxt-link>
+              </v-list-item>
+            </v-list-item-group>
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+      </v-expansion-panels>
+    </v-container>
   </v-app>
 </template>
 <script>
@@ -36,6 +39,8 @@ export default {
     return {
       Indice: "/php/indices",
       CodePHP: "/php/codePHP",
+      Doc: "https://www.php.net/manual/en/",
+      Target_Novatela: "_blank",
       lista: [
         {
           id: 1,

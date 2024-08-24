@@ -5,14 +5,15 @@
     </v-card>
     <v-card>
       <v-card-subtitle class="text-red-darken-1">
-        <nuxt-link :to="Indice"><b>ÍNDICE</b></nuxt-link> <br> <br>
-        <nuxt-link :to=Code><b>Código Laravel</b></nuxt-link>
+        <nuxt-link :to="Indice"><b>Índice VV</b></nuxt-link> <br> <br>
+        <nuxt-link :to=Code><b>Código Laravel</b></nuxt-link> <br> <br>
+        <a :href=Doc :target=Target_Novatela><b>Documentação</b></a>
       </v-card-subtitle>
     </v-card>
     <v-container>
       <v-expansion-panels>
-        <!-- Módulo 1: Introdução ao TypeScript -->
-        <v-expansion-panel v-for="item in lista" :key="item.id">
+        <!-- Módulo 1: Introdução ao Laravel -->
+        <v-expansion-panel v-for="(item, index) in lista" :key="index">
           <v-expansion-panel-header>
             <b>{{ item.name }}</b>
           </v-expansion-panel-header>
@@ -33,314 +34,298 @@
 </template>
 
 <script>
-import LgoTS from "~/components/img/logoLaravel.vue";
+import LgoLaravel from "~/components/img/logoLaravel.vue";
 export default {
   name: "menuLaravel",
   data() {
     return {
       Indice: "/laravel/indices",
       Code: "/laravel/codeLaravel",
+      Doc: "https://laravel.com/",
+      Target_Novatela: "_blank",
       lista: [
         {
           id: 1,
           name: "Introdução",
           open: true,
           subItems: [
-            { id: 1, name: "TypeScript?", page: "/ts/M1_Introducao/oQueETypeScript" },
-            { id: 2, name: "Instalação", page: "/ts/M1_Introducao/instalacaoConfiguracao" },
-            { id: 3, name: "TS x JS", page: "/ts/M1_Introducao/diferencasJavaScript" },
+            { id: 1, name: "O que é Laravel?", page: "/laravel/M1_Introducao/oQueELaravel" },
+            { id: 2, name: "Instalação", page: "/laravel/M1_Introducao/instalacao" },
+            { id: 3, name: "Arquitetura MVC", page: "/laravel/M1_Introducao/arquiteturaMVC" },
           ]
         },
         {
           id: 2,
-          name: "Sintaxe e Tipos",
+          name: "Roteamento e Controladores",
           open: true,
           subItems: [
-            { id: 1, name: "Tipos Primitivos", page: "/ts/M2_SintaxeTipos/tiposPrimitivos" },
-            { id: 2, name: "Dados Avançados", page: "/ts/M2_SintaxeTipos/tiposDadosAvancados" },
-            { id: 3, name: "Union e Intersection", page: "/ts/M2_SintaxeTipos/tiposUnionIntersection" },
+            { id: 1, name: "Rotas Básicas", page: "/laravel/M2_Roteamento/rotasBasicas" },
+            { id: 2, name: "Controladores", page: "/laravel/M2_Roteamento/controladores" },
+            { id: 3, name: "Métodos de Rota", page: "/laravel/M2_Roteamento/metodosRota" },
           ]
         },
         {
           id: 3,
-          name: "Funções",
+          name: "Modelos e Eloquent ORM",
           open: true,
           subItems: [
-            { id: 1, name: "Funções", page: "/ts/M3_Funcoes/funcaoTiposRetorno" },
-            { id: 2, name: "Anônimas", page: "/ts/M3_Funcoes/anonimasFunctions" },
-            { id: 2, name: "Arrow Functions", page: "/ts/M3_Funcoes/arrowFunctions" },
-            { id: 3, name: "Overloading", page: "/ts/M3_Funcoes/overloading" },
+            { id: 1, name: "Introdução ao Eloquent", page: "/laravel/M3_Modelos/introducaoEloquent" },
+            { id: 2, name: "Criação de Modelos", page: "/laravel/M3_Modelos/criacaoModelos" },
+            { id: 3, name: "Relacionamentos", page: "/laravel/M3_Modelos/relacionamentos" },
           ]
         },
         {
           id: 4,
-          name: "Classes e Interfaces",
+          name: "Banco de Dados e Migrações",
           open: true,
           subItems: [
-            { id: 1, name: "Classes", page: "/ts/M4_ClassesInterfaces/classesBasicas" },
-            { id: 2, name: "Polimorfismo", page: "/ts/M4_ClassesInterfaces/polimorfismo" },
-            { id: 3, name: "Herança", page: "/ts/M4_ClassesInterfaces/heranca" },
-            { id: 4, name: "Interfaces", page: "/ts/M4_ClassesInterfaces/interfacesTipos" },
-            { id: 5, name: "Tipos Customizados", page: "/ts/M4_ClassesInterfaces/interfacesTipos" },
+            { id: 1, name: "Configuração do Banco de Dados", page: "/laravel/M4_BancoDeDados/configuracaoBD" },
+            { id: 2, name: "Migrações", page: "/laravel/M4_BancoDeDados/migracoes" },
+            { id: 3, name: "Seeders", page: "/laravel/M4_BancoDeDados/seeders" },
           ]
         },
         {
           id: 5,
-          name: "Genéricos",
+          name: "Validação de Dados",
           open: true,
           subItems: [
-            { id: 1, name: "Genéricos", page: "/ts/M5_Genericos/introducao" },
-            { id: 2, name: "Em Funções", page: "/ts/M5_Genericos/genericosFuncoes" },
-            { id: 3, name: "Em Classes", page: "/ts/M5_Genericos/genericosClasses" },
+            { id: 1, name: "Validação de Requisições", page: "/laravel/M5_Validacao/validacaoRequisicoes" },
+            { id: 2, name: "Customização de Mensagens", page: "/laravel/M5_Validacao/customizacaoMensagens" },
           ]
         },
         {
           id: 6,
-          name: "Módulos",
+          name: "Autenticação e Autorização",
           open: true,
           subItems: [
-            { id: 1, name: "Importação", page: "/ts/M6_Modulos/importacao" },
-            { id: 2, name: "Exportação", page: "/ts/M6_Modulos/exportacao" },
-            { id: 3, name: "Nativose", page: "/ts/M6_Modulos/modulosNativos" },
-            { id: 4, name: "Terceiros", page: "/ts/M6_Modulos/modulosTerceiros" },
+            { id: 1, name: "Autenticação Básica", page: "/laravel/M6_Autenticacao/autenticacaoBasica" },
+            { id: 2, name: "Autorização com Policies", page: "/laravel/M6_Autenticacao/policies" },
+            { id: 3, name: "Middleware", page: "/laravel/M6_Autenticacao/middleware" },
           ]
         },
         {
           id: 7,
-          name: "Programação Assíncrona",
+          name: "Trabalhando com Requests",
           open: true,
           subItems: [
-            { id: 1, name: "Promises", page: "/ts/M7_ProgramacaoAssincrona/promises" },
-            { id: 2, name: "Async/Await", page: "/ts/M7_ProgramacaoAssincrona/asyncAwait" },
-            { id: 3, name: "Manipular Erros", page: "/ts/M7_ProgramacaoAssincrona/manipulacaoErros" },
+            { id: 1, name: "Request Básico", page: "/laravel/M7_Requests/requestBasico" },
+            { id: 2, name: "Request Avançado", page: "/laravel/M7_Requests/requestAvancado" },
           ]
         },
         {
           id: 8,
-          name: "Integração com JavaScript",
+          name: "Sessões e Cookies",
           open: true,
           subItems: [
-            { id: 1, name: "Usando TypeScript com Bibliotecas JavaScript", page: "/ts/M8_IntegraçãoJavaScript/usandoBibliotecas" },
-            { id: 2, name: "Integração com Frameworks", page: "/ts/M8_IntegraçãoJavaScript/frameworks" },
+            { id: 1, name: "Gerenciamento de Sessões", page: "/laravel/M8_Sessoes/sessoes" },
+            { id: 2, name: "Cookies", page: "/laravel/M8_Sessoes/cookies" },
           ]
         },
         {
           id: 9,
-          name: "Configurações Avançadas",
+          name: "Envio de Emails",
           open: true,
           subItems: [
-            { id: 1, name: "Configuração do TypeScript com Webpack", page: "/ts/M9_ConfigAvancadas/webpack" },
-            { id: 2, name: "Configuração com Babel", page: "/ts/M9_ConfigAvancadas/babel" },
-            { id: 3, name: "Configuração com ESLint", page: "/ts/M9_ConfigAvancadas/eslint" },
+            { id: 1, name: "Configuração de Email", page: "/laravel/M9_Email/configuracaoEmail" },
+            { id: 2, name: "Envio de Emails", page: "/laravel/M9_Email/envioEmails" },
           ]
         },
         {
           id: 10,
-          name: "Testes em TypeScript",
+          name: "Armazenamento e Upload de Arquivos",
           open: true,
           subItems: [
-            { id: 1, name: "Testes Unitários com Jest", page: "/ts/M10_Testes/jest" },
-            { id: 2, name: "Testes com Mocha e Chai", page: "/ts/M10_Testes/mochaChai" },
+            { id: 1, name: "Armazenamento de Arquivos", page: "/laravel/M10_Armazenamento/armazenamentoArquivos" },
+            { id: 2, name: "Uploads", page: "/laravel/M10_Armazenamento/uploads" },
           ]
         },
         {
           id: 11,
-          name: "Boas Práticas e Estilo",
+          name: "API e API Resources",
           open: true,
           subItems: [
-            { id: 1, name: "Boas Práticas de Codificação", page: "/ts/M11_BoasPraticas/boasPraticas" },
-            { id: 2, name: "Guia de Estilo para TypeScript", page: "/ts/M11_BoasPraticas/guiaEstilo" },
+            { id: 1, name: "Construção de APIs", page: "/laravel/M11_API/construcaoAPIs" },
+            { id: 2, name: "API Resources", page: "/laravel/M11_API/apiResources" },
           ]
         },
         {
           id: 12,
-          name: "TypeScript com React",
+          name: "Testes em Laravel",
           open: true,
           subItems: [
-            { id: 1, name: "Configuração Inicial", page: "/ts/M12_TSReact/configuracaoInicial" },
-            { id: 2, name: "Componentes e Props", page: "/ts/M12_TSReact/componentesProps" },
-            { id: 3, name: "State e Context API", page: "/ts/M12_TSReact/stateContext" },
+            { id: 1, name: "Testes Unitários", page: "/laravel/M12_Testes/testesUnitarios" },
+            { id: 2, name: "Testes de Integração", page: "/laravel/M12_Testes/testesIntegracao" },
           ]
         },
         {
           id: 13,
-          name: "TypeScript com Vue",
+          name: "Jobs e Queues",
           open: true,
           subItems: [
-            { id: 1, name: "Configuração do Vue com TypeScript", page: "/ts/M13_TSVue/configuracaoVue" },
-            { id: 2, name: "Componentes e Props", page: "/ts/M13_TSVue/componentesProps" },
-            { id: 3, name: "Vuex e TypeScript", page: "/ts/M13_TSVue/vuexTypeScript" },
+            { id: 1, name: "Introdução a Jobs", page: "/laravel/M13_Jobs/introducaoJobs" },
+            { id: 2, name: "Trabalhando com Queues", page: "/laravel/M13_Jobs/trabalhandoQueues" },
           ]
         },
         {
           id: 14,
-          name: "TypeScript com Angular",
+          name: "Eventos e Listeners",
           open: true,
           subItems: [
-            { id: 1, name: "Configuração do Angular com TypeScript", page: "/ts/M14_TSAngular/configuracaoAngular" },
-            { id: 2, name: "Componentes e Serviços", page: "/ts/M14_TSAngular/componentesServicos" },
-            { id: 3, name: "Dependency Injection", page: "/ts/M14_TSAngular/dependencyInjection" },
+            { id: 1, name: "Eventos", page: "/laravel/M14_Eventos/eventos" },
+            { id: 2, name: "Listeners", page: "/laravel/M14_Eventos/listeners" },
           ]
         },
         {
           id: 15,
-          name: "Tipos Avançados",
+          name: "Trabalhando com Caching",
           open: true,
           subItems: [
-            { id: 1, name: "Tipos Condicionais", page: "/ts/M15_TiposAvancados/tiposCondicionais" },
-            { id: 2, name: "Mapeamento de Tipos", page: "/ts/M15_TiposAvancados/mapeamentoTipos" },
-            { id: 3, name: "Tipos de Utilidade", page: "/ts/M15_TiposAvancados/tiposUtilidade" },
+            { id: 1, name: "Introdução ao Caching", page: "/laravel/M15_Caching/introducaoCaching" },
+            { id: 2, name: "Cache em Consultas", page: "/laravel/M15_Caching/cacheConsultas" },
           ]
         },
         {
           id: 16,
-          name: "Patterns de Projeto",
+          name: "Jobs e Queues",
           open: true,
           subItems: [
-            { id: 1, name: "Singleton", page: "/ts/M16_PatternsProjeto/singleton" },
-            { id: 2, name: "Factory", page: "/ts/M16_PatternsProjeto/factory" },
-            { id: 3, name: "Observer", page: "/ts/M16_PatternsProjeto/observer" },
+            { id: 1, name: "Introdução a Jobs", page: "/laravel/M16_Jobs/introducaoJobs" },
+            { id: 2, name: "Configuração de Queues", page: "/laravel/M16_Jobs/configuracaoQueues" },
           ]
         },
         {
           id: 17,
-          name: "Segurança em TypeScript",
+          name: "Autorização e Policies",
           open: true,
           subItems: [
-            { id: 1, name: "Validação de Dados", page: "/ts/M17_Seguranca/validacaoDados" },
-            { id: 2, name: "Prevenção de Injeção de Código", page: "/ts/M17_Seguranca/prevençãoInjecao" },
+            { id: 1, name: "Definindo Policies", page: "/laravel/M17_Autorizacao/policies" },
+            { id: 2, name: "Autorização de Ações", page: "/laravel/M17_Autorizacao/autorizacaoAcoes" },
           ]
         },
         {
           id: 18,
-          name: "Performance e Otimização",
+          name: "Migrations Avançadas",
           open: true,
           subItems: [
-            { id: 1, name: "Otimização de Código", page: "/ts/M18_Performance/otimizacaoCodigo" },
-            { id: 2, name: "Análise de Performance", page: "/ts/M18_Performance/analisePerformance" },
+            { id: 1, name: "Migrations Avançadas", page: "/laravel/M18_Migrations/avancadas" },
+            { id: 2, name: "Alteração de Tabelas", page: "/laravel/M18_Migrations/alteracaoTabelas" },
           ]
         },
         {
           id: 19,
-          name: "Integração com API",
+          name: "Testes e Cobertura",
           open: true,
           subItems: [
-            { id: 1, name: "Consumo de API com Fetch", page: "/ts/M19_IntegraçãoAPI/fetch" },
-            { id: 2, name: "Integração com Axios", page: "/ts/M19_IntegraçãoAPI/axios" },
+            { id: 1, name: "Testes Unitários", page: "/laravel/M19_Testes/testesUnitarios" },
+            { id: 2, name: "Cobertura de Código", page: "/laravel/M19_Testes/coberturaCodigo" },
           ]
         },
         {
           id: 20,
-          name: "Documentação e Comentários",
+          name: "Estrutura de Projeto",
           open: true,
           subItems: [
-            { id: 1, name: "Documentação com JSDoc", page: "/ts/M20_DocumentacaoJSdoc/jsdoc" },
-            { id: 2, name: "Melhores Práticas de Comentários", page: "/ts/M20_DocumentacaoJSdoc/melhoresPraticas" },
+            { id: 1, name: "Organização de Pastas", page: "/laravel/M20_Estrutura/organizacaoPastas" },
+            { id: 2, name: "Padrões de Projeto", page: "/laravel/M20_Estrutura/padroesProjeto" },
           ]
         },
         {
           id: 21,
-          name: "Utilitários e Ferramentas",
+          name: "Middleware Avançado",
           open: true,
           subItems: [
-            { id: 1, name: "Utilitários de Linters", page: "/ts/M21_Utilitarios/linters" },
-            { id: 2, name: "Ferramentas de Build", page: "/ts/M21_Utilitarios/ferramentasBuild" },
+            { id: 1, name: "Criando Middlewares", page: "/laravel/M21_Middleware/criandoMiddlewares" },
+            { id: 2, name: "Aplicando Middlewares", page: "/laravel/M21_Middleware/aplicandoMiddlewares" },
           ]
         },
         {
           id: 22,
-          name: "Trabalhando com Dados",
+          name: "Integrando com APIs Externas",
           open: true,
           subItems: [
-            { id: 1, name: "Manipulação de Arrays", page: "/ts/M22_TrabalhandoComDados/manipulacaoArrays" },
-            { id: 2, name: "Manipulação de Objetos", page: "/ts/M22_TrabalhandoComDados/manipulacaoObjetos" },
+            { id: 1, name: "Chamadas HTTP", page: "/laravel/M22_Integracao/chamadasHTTP" },
+            { id: 2, name: "Autenticação em APIs", page: "/laravel/M22_Integracao/autenticacaoAPIs" },
           ]
         },
         {
           id: 23,
-          name: "TypeScript no Backend",
+          name: "Segurança",
           open: true,
           subItems: [
-            { id: 1, name: "Configuração com Node.js", page: "/ts/M23_Backend/configuracaoNode" },
-            { id: 2, name: "Frameworks Backend", page: "/ts/M23_Backend/frameworksBackend" },
+            { id: 1, name: "Protegendo Aplicações", page: "/laravel/M23_Seguranca/protecaoAplicacoes" },
+            { id: 2, name: "Criptografia", page: "/laravel/M23_Seguranca/criptografia" },
           ]
         },
         {
           id: 24,
-          name: "Comunicação entre Componentes",
+          name: "Localização e Internacionalização",
           open: true,
           subItems: [
-            { id: 1, name: "Props e Eventos", page: "/ts/M24_ComunicacaoComponentes/propsEventos" },
-            { id: 2, name: "Gerenciamento de Estado", page: "/ts/M24_ComunicacaoComponentes/gerenciamentoEstado" },
+            { id: 1, name: "Localização", page: "/laravel/M24_Localizacao/localizacao" },
+            { id: 2, name: "Internacionalização", page: "/laravel/M24_Localizacao/internacionalizacao" },
           ]
         },
         {
           id: 25,
-          name: "Design Patterns com TypeScript",
+          name: "Uso de Serviços Externos",
           open: true,
           subItems: [
-            { id: 1, name: "Decorator", page: "/ts/M25_DesignPatterns/decorator" },
-            { id: 2, name: "Proxy", page: "/ts/M25_DesignPatterns/proxy" },
+            { id: 1, name: "Serviços de Pagamento", page: "/laravel/M25_ServicosExternos/servicosPagamento" },
+            { id: 2, name: "Notificações", page: "/laravel/M25_ServicosExternos/notificacoes" },
           ]
         },
         {
           id: 26,
-          name: "Segurança Avançada",
+          name: "Deploy e Manutenção",
           open: true,
           subItems: [
-            { id: 1, name: "Proteção contra XSS", page: "/ts/M26_SegurancaAvancada/xss" },
-            { id: 2, name: "Proteção contra CSRF", page: "/ts/M26_SegurancaAvancada/csrf" },
+            { id: 1, name: "Deploy em Servidores", page: "/laravel/M26_Deploy/deployServidores" },
+            { id: 2, name: "Manutenção", page: "/laravel/M26_Deploy/manutencao" },
           ]
         },
         {
           id: 27,
-          name: "Internacionalização e Localização",
+          name: "Performance e Otimização",
           open: true,
           subItems: [
-            { id: 1, name: "Configuração de i18n", page: "/ts/M27_Internacionalizacao/configuracaoI18n" },
-            { id: 2, name: "Traduções e Formatação", page: "/ts/M27_Internacionalizacao/traducoesFormatacao" },
+            { id: 1, name: "Otimização de Consultas", page: "/laravel/M27_Performance/otimizacaoConsultas" },
+            { id: 2, name: "Melhorias de Performance", page: "/laravel/M27_Performance/melhoriasPerformance" },
           ]
         },
         {
           id: 28,
-          name: "Desenvolvimento Mobile com TypeScript",
+          name: "Eventos e Listeners",
           open: true,
           subItems: [
-            { id: 1, name: "Introdução ao React Native", page: "/ts/M28_DesenvolvimentoMobile/reactNative" },
-            { id: 2, name: "Integração com API", page: "/ts/M28_DesenvolvimentoMobile/integracaoAPI" },
+            { id: 1, name: "Definindo Eventos", page: "/laravel/M28_Eventos/definindoEventos" },
+            { id: 2, name: "Criando Listeners", page: "/laravel/M28_Eventos/criandoListeners" },
           ]
         },
         {
           id: 29,
-          name: "Desenvolvimento Desktop com TypeScript",
+          name: "Recursos Avançados",
           open: true,
           subItems: [
-            { id: 1, name: "Introdução ao Electron", page: "/ts/M29_DesenvolvimentoDesktop/electron" },
-            { id: 2, name: "Integração com Backend", page: "/ts/M29_DesenvolvimentoDesktop/integracaoBackend" },
+            { id: 1, name: "Recursos de Desenvolvimento", page: "/laravel/M29_Recursos/recursosDesenvolvimento" },
+            { id: 2, name: "Extensões e Pacotes", page: "/laravel/M29_Recursos/extensoesPacotes" },
           ]
         },
         {
           id: 30,
-          name: "Práticas Avançadas e Estudos de Caso",
+          name: "Melhores Práticas",
           open: true,
           subItems: [
-            { id: 1, name: "Estudo de Caso: Aplicação Completa", page: "/ts/M30_PraticaEstudos/estudoCaso" },
-            { id: 2, name: "Práticas Avançadas e Dicas", page: "/ts/M30_PraticaEstudos/praticasAvancadas" },
+            { id: 1, name: "Boas Práticas de Codificação", page: "/laravel/M30_BoasPraticas/boasPraticas" },
+            { id: 2, name: "Documentação e Manutenção", page: "/laravel/M30_BoasPraticas/documentacaoManutencao" },
           ]
-        }
+        },
       ]
     };
-  },
-  methods: {
-    toggleSubItems(item) {
-      item.open = !item.open;
-    }
-  },
-  components: {
-    LgoTS
   }
 };
 </script>
+
+
 
 <style scoped>
 .TextMenu {
