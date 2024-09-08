@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Watch Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.47/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="addItem">Adicionar Item</button>
+        <ul>
+            <li v-for="item in items" :key="item">{{ item }}</li>
+        </ul>
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    items: ['Item 1', 'Item 2']
+                };
+            },
+            watch: {
+                items: {     // apara uso em array
+                    handler(newItems, oldItems) {
+                        console.log('Itens mudaram de', newItems.length - 1, 'para', oldItems.length);
+                        console.log('Itens mudaram de', newItems, 'para', oldItems);
+                    },
+                    deep: true
+                }
+            },
+            methods: {
+                addItem() {
+                    this.items.push('Item ' + (this.items.length + 1));
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+
+</html>

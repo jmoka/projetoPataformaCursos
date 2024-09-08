@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas com Watch</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.47/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- Input para adicionar tarefa -->
+        <input v-model="novaTarefa" placeholder="Digite uma nova tarefa">
+        <button @click="adicionarTarefa">Adicionar Tarefa</button>
+
+        <!-- Lista de tarefas -->
+        <ul>
+            <li v-for="tarefa in tarefas" :key="tarefa">{{ tarefa }}</li>
+        </ul>
+
+        <!-- Exibe o número total de tarefas -->
+        <p>Total de tarefas: {{ totalTarefas }}</p>
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    tarefas: ['Estudar', 'Ler um livro'],
+                    novaTarefa: ''
+                };
+            },
+            computed: {
+                totalTarefas() {
+                    return this.tarefas.length;
+                }
+            },
+            watch: {
+                tarefas: {
+                    handler(novoArray, arrayAntigo) {
+                        console.log('Lista de tarefas mudou:', novoArray);
+                    },
+                    deep: true
+                }
+            },
+            methods: {
+                adicionarTarefa() {
+                    if (this.novaTarefa.trim() !== '') {
+                        this.tarefas.push(this.novaTarefa);
+                        this.novaTarefa = '';
+                    }
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+
+</html>

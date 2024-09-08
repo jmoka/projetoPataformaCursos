@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="interruptor()">Acender</button>
+
+    <div id="lam">Desligada</div>
+
+
+
+    <script>
+        let lampada = document.getElementById("lam");
+        let estado = false;
+
+
+        function interruptor() {
+            estado = !estado;
+            if (estado) {
+
+                lampada.innerText = "Ligada";
+                document.querySelector("button").innerText = "Apagar";
+            } else {
+                lampada.innerText = "Desligada";
+                document.querySelector("button").innerText = "Acender";
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

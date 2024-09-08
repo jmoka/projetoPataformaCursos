@@ -1,0 +1,81 @@
+<template>
+    <v-app>
+        <!-- Menu de navegação lateral -->
+        <v-navigation-drawer app>
+            <Menu />
+        </v-navigation-drawer>
+        <v-main>
+            <div>
+                <h1>{{ msg }}</h1>
+            </div>
+
+            <!-- Container principal -->
+            <v-container fluid>
+                <v-row>
+                    <v-col cols="12">
+                        <!-- Introdução -->
+                        <p class="justificar">
+
+                        </p>
+
+
+                        <h3>Exemplo Básico: Contador</h3>
+                        <p class="justificar">
+
+                        </p>
+                        ...
+            </v-container>
+
+            <!-- Vídeo explicativo -->
+            <v-container video>
+                <v-responsive :aspect-ratio="16 / 9">
+                    <iframe :src="video" :allow="propriedadesVideo" allowfullscreen></iframe>
+                </v-responsive>
+            </v-container>
+
+        </v-main>
+        <div class="d-flex justify-center container-fluid">
+            <h1><a :href="linkAula">Saiba Mais</a></h1>
+        </div>
+
+
+        <!-- Rodapé -->
+        <v-footer>
+            <Footer />
+        </v-footer>
+    </v-app>
+</template>
+
+<script>
+    import Menu from '@/components/js/menuJS.vue'
+    import Footer from '@/components/footer_page.vue'
+
+    export default {
+        name: "Watchers",
+        data() {
+            return {
+                msg: "Tag Script",
+                linkAula: "https://www.w3schools.com/js/js_statements.asp",
+                video: 'https://www.youtube.com/embed/VIDEO_ID', // Substitua VIDEO_ID pela ID real do vídeo
+                propriedadesVideo: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
+            };
+        },
+        components: {
+            Menu
+        }
+
+    }
+</script>
+
+<style scoped>
+    .video {
+        max-width: 70%;
+        max-height: 70%;
+    }
+
+    .justificar {
+        text-align: justify;
+    }
+</style>
+
+sempre usar <par><code></code></par> quando necessário

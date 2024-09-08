@@ -49,9 +49,11 @@ export default {
           name: "Introdução",
           open: true,
           subItems: [
-            { id: 1, name: "O que é Laravel?", page: "/laravel/M1_Introducao/oQueELaravel" },
-            { id: 2, name: "Instalação", page: "/laravel/M1_Introducao/instalacao" },
-            { id: 3, name: "Arquitetura MVC", page: "/laravel/M1_Introducao/arquiteturaMVC" },
+            { id: 1, name: "O que é Laravel?", page: "/laravel/M1_Introducao/oQUeELaravel" },
+            { id: 2, name: "História", page: "/laravel/M1_Introducao/historia" },
+            { id: 3, name: "Caracteristicas", page: "/laravel/M1_Introducao/caracteristicas" },
+            { id: 4, name: "Artisan", page: "/laravel/M1_Introducao/artisan" },
+            { id: 4, name: "Comando Artisan", page: "/laravel/M1_Introducao/comandoArtisan" },
           ]
         },
         {

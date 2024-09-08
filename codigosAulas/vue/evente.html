@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle List Items</title>
+    <style>
+        /* Estilos básicos para a lista */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 8px 0;
+            padding: 8px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            cursor: pointer;
+        }
+
+        /* Classe que será adicionada/removida */
+        .t {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="myList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+    </ul>
+
+    <script>
+        // Obtendo a referência para o elemento <ul>
+        const list = document.getElementById("myList");
+
+        // Função para alternar a classe "t" ao elemento clicado
+        function toggleClass(e) {
+            // Verificando se o alvo do clique é um <li>
+            if (e.target.tagName === 'LI') {
+                console.log(e);
+
+                // Alterna a classe "t" para adicionar ou remover o fundo vermelho
+                e.target.classList.toggle("t");
+
+            }
+        }
+
+        // Adicionando o evento de clique ao <ul> (delegação de eventos)
+        list.addEventListener("click", toggleClass, true);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Watch Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.47/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input v-model="message" placeholder="Digite uma mensagem">
+        <p>Mensagem: {{ message }}</p>
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    message: ''
+                };
+            },
+            watch: {
+                message(newValue, oldValue) {
+                    console.log(`Mensagem mudou de "${oldValue}" para "${newValue}"`);
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+
+</html>

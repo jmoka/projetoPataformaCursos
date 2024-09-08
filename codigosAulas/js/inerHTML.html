@@ -1,0 +1,63 @@
+<html>
+
+<body>
+
+    <h2 class="x">Uso do innerHTML</h2>
+
+    <p id="demo">JavaScript </p>
+
+    <button id="d1" class="g" type="button" onclick='document.getElementById("demo").innerText = "Cupu Gay>"'>
+        Click Me!
+    </button>
+    <button class="g" type="button"
+        onclick='document.getElementById("demo").innerText = "<h1>Testando o H1 no innerHTML</h1>"'>
+        Click Me!
+    </button>
+    <button id="d2" class="g" type="button"
+        onclick='document.getElementById("demo").innerText = "<h1>Testando o H1 no innerHTML</h1>"'>
+        Click Me!
+    </button>
+
+
+
+
+
+</body>
+
+</html>
+
+<script>
+
+
+</script>
+
+<style>
+    .x {
+        color: red;
+        border: 1px red solid
+    }
+
+    #demo {
+        background-color: coral;
+    }
+
+    button {
+        background-color: blue;
+    }
+
+    .g {
+        color: pink;
+    }
+
+    #d1 {
+        width: 50px;
+        height: 50px;
+        border: 2px yellow solid;
+        border-radius: 50%;
+        background-color: red;
+    }
+</style>
+
+<!-- Descrição: Representa o conteúdo HTML de um elemento como uma string, permitindo que você adicione, modifique ou remova elementos e tags HTML.
+
+Uso: Quando você define innerHTML, você pode incluir HTML completo, incluindo tags e atributos. -->

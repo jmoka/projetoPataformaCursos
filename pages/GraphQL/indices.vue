@@ -2,7 +2,7 @@
   <v-app>
     <!-- Menu -->
     <v-navigation-drawer app>
-      <MenuGraphQL />
+      <Menu />
     </v-navigation-drawer>
 
     <!-- Main Content -->
@@ -245,13 +245,17 @@
 </template>
 
 <script>
+import Menu from "@/components/graphQL/menuGraphQL.vue"
 export default {
   data() {
     return {
       msg: 'Curso Completo de GraphQL',
-      video: 'https://www.youtube.com/embed/gnsO8-xJ8rs',
+      video: 'https://www.youtube.com/embed/VIDEO_ID',
       propriedadesVideo: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
     }
+  },
+  components: {
+    Menu
   }
 }
 </script>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js Toggle de Classes</title>
+    <!-- Importando Vue.js através do CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- Importando Vuetify através do CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@3.1.0/dist/vuetify.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@3.1.0/dist/vuetify.min.js"></script>
+</head>
+
+<body>
+    <!-- Estrutura Vue -->
+    <div id="app">
+        <v-app>
+            <v-main>
+                <v-container>
+                    <v-btn @click="toggleClasse">Alterar Estilo</v-btn>
+                    <h1 :class="{ 'normal': !isInvertido, 'invertido': isInvertido }">Texto com Toggle de Classes</h1>
+                </v-container>
+
+                <br><br>
+                <div>Checked names: {{ checkedNames }}</div>
+
+                <input type="checkbox" id="jack" value="Jack" v-model="checkedNames" />
+                <label for="jack">Jack</label>
+
+                <input type="checkbox" id="john" value="John" v-model="checkedNames" />
+                <label for="john">John</label>
+
+                <input type="checkbox" id="mike" value="Mike" v-model="checkedNames" />
+                <label for="mike">Mike</label>
+
+
+
+                <div>Selected: {{ selected }}</div>
+
+                <select class="cor" v-model="selected">
+                    <option disabled value="">Please select one</option>
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                </select>
+
+            </v-main>
+        </v-app>
+    </div>
+    <!-- Script Vue -->
+    <script>
+        const { createApp } = Vue;
+        const { createVuetify } = Vuetify;
+
+        const vuetify = createVuetify();
+
+        createApp({
+            data() {
+                return {
+                    isInvertido: false,
+                    checkedNames: []
+                };
+            },
+            methods: {
+                toggleClasse() {
+                    this.isInvertido = !this.isInvertido;
+                }
+            }
+        }).use(vuetify).mount('#app');
+    </script>
+    <!-- Estilo -->
+    <style>
+        .normal {
+            color: black;
+            background-color: white;
+        }
+
+        .invertido {
+            color: white;
+            background-color: black;
+        }
+
+        .cor {
+
+            border: 2px red solid;
+        }
+    </style>
+</body>
+
+</html>

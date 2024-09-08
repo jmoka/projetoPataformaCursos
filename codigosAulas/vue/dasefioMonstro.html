@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.47/dist/vue.global.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@3.1.3/dist/vuetify.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@3.1.3/dist/vuetify.js"></script>
+    <title>Game Monster</title>
+</head>
+
+<body>
+    <div id="app">
+        <div class="d-flex justify-center align-center w-100">
+            <div class=" w-100 text-center  ">
+                <div style="width: 90%;">
+                    <h1>Jogador</h1>
+                </div>
+                <div class=" text-center justify-end" :style="{ width: barraJogador +'%', backgroundColor:corbarraJ }">
+                    <p>{{contadorJogador}}%</p>
+                </div>
+            </div>
+
+
+            <div class="mt-5 text-center w-50 ">
+                <div>
+                    <h3>VS</h3>
+                    <p v-if="result === 0 || resultado === 0">
+                        Mesma Força
+                    </p>
+
+                    <p v-if="result > 0">
+                        <== ({{resultado}}) Jogador </p>
+
+
+                            <p v-if="result < 0 ">
+                                Monstro ({{resultado}}) ==>
+                            </p>
+                </div>
+
+            </div>
+
+            <div class=" w-100 text-center  ">
+                <div style="width: 90%;">
+                    <h1>Monstro</h1>
+                </div>
+                <div class=" text-center justify-end" :style="{ width: barraMonstro +'%', backgroundColor:corbarraM }">
+                    <p>{{contadorMostro}}%</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!--====================================================-->
+
+        <div class="border">
+            <dir class=" d-flex justify-center">
+                <button v-if="!visible" class="iniciar border bg-red" @Click="iniciar()">Iniciar</button>
+
+            </dir>
+
+            <div v-if="visible" class="d-flex justify-center">
+                <button class="border bg-red" @Click="ataqueJogado()">Ataque</button>
+                <button class="border bg-yellow" @Click="ataqueEspecial()">Ataque Especial</button>
+                <button class="border bg-green" @Click="cura()">Curar</button>
+                <button class="border bg-grey-darken-1" @Click="desistir()">Desistir</button>
+            </div>
+
+        </div>
+        <!--====================================================-->
+
+        <div class="d-flex">
+
+            <div class="border w-100">
+                <div class="border" v-for="(ataqueJ, index) in ataqueJogador"> {{ataqueJ}}</div>
+            </div>
+
+            <div class="border w-100">
+                <div class="border" v-for="(ataqueM, index) in ataqueMonstro">{{ataqueM}}</div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        const { createApp } = Vue;
+        createApp({
+            data() {
+                return {
+                    corbarraJ: 'green',
+                    corbarraM: 'green',
+                    contadorJogador: 0,
+                    contadorMostro: 0,
+                    ataqueJogador: [],
+                    ataqueMonstro: [],
+                    poderJogador: 0,
+                    poderMostro: 0,
+                    visible: false,
+                    resultado: 0,
+                    barraJogador: 100,
+                    barraMonstro: 100
+                }
+            },
+            watch: {
+                contadorJogador() {
+                    if (this.contadorJogador >= 100) {
+                        this.contadorJogador = 100
+                        alert("Vida Completa 100%")
+                    } else if (this.contadorJogador <= 0) {
+                        alert("Acabou o Jogo Você Perdeu")
+                        this.reiniciar();
+
+                    }
+                },
+                contadorMostro() {
+                    if (this.contadorMostro < 1) {
+                        alert("Acabou o Jogo Você Ganhou")
+                        this.reiniciar();
+                    }
+                },
+                barraJogador() {
+
+                    if (this.barraJogador <= 70 && this.barraJogador >= 55) {
+                        this.corbarraJ = 'blue'
+
+
+                    } else if (this.barraJogador <= 54 && this.barraJogador >= 35) {
+                        this.corbarraJ = 'yellow'
+
+
+                    } else if (this.barraJogador <= 34 && this.barraJogador >= 10) {
+                        this.corbarraJ = 'red'
+
+
+                    } else {
+                        this.corbarraJ = 'green'
+                    }
+                },
+                barraMonstro() {
+
+                    if (this.barraMonstro <= 70 && this.barraMonstro >= 55) {
+                        this.corbarraM = 'blue'
+
+
+                    } else if (this.barraMonstro <= 54 && this.barraMonstro >= 35) {
+                        this.corbarraM = 'yellow'
+
+
+                    } else if (this.barraMonstro <= 34 && this.barraMonstro >= 10) {
+                        this.corbarraM = 'red'
+
+
+                    } else {
+                        this.corbarraM = 'green'
+                    }
+                },
+            },
+            computed: {
+                result() {
+
+                    this.resultado = this.poderJogador - this.poderMostro
+                    console.log(this.resultado)
+                    return this.resultado
+                },
+
+            },
+            methods: {
+                cura() {
+                    if (this.contadorJogador >= 100) {
+                        alert("Vida Completa 100%")
+                    } else {
+                        this.contadorJogador += 2
+                        this.barraJogador += 2
+                    }
+
+                },
+                ataqueJogado() {
+
+                    this.poderJogador = Math.ceil(Math.round(this.contadorJogador - Math.random() * 100) / 100 * 10)
+                    this.ataqueJogador.push(`Ataque Jogador = ${this.poderJogador}`)
+
+                    this.poderMostro = Math.ceil(Math.round(this.contadorMostro - Math.random() * 100) / 100 * 10)
+                    this.ataqueMonstro.push(`Ataque Monstro = ${this.poderMostro}`)
+                    let poder = this.poderJogador - this.poderMostro
+
+
+                    if (poder > 0) {
+                        this.resultado = poder
+                        this.contadorMostro -= this.resultado
+                        this.barraMonstro -= this.resultado
+                    } else {
+                        this.resultado = poder
+                        this.contadorJogador += this.resultado
+                        this.barraJogador += this.resultado
+                    }
+
+                },
+                ataqueEspecial() {
+                    this.poderJogador = 10
+                    this.ataqueJogador.push(`Ataque Jogador = ${this.poderJogador}`)
+                    this.poderMostro = 2
+                    this.ataqueMonstro.push(`Ataque Monstro = ${this.poderMostro}`)
+
+                    this.contadorMostro -= this.poderJogador + 10
+                    this.barraMonstro -= this.poderJogador + 10
+
+                    this.barraJogador -= this.poderMostro = 2
+                    this.barraJogador -= this.poderMostro = 2
+
+
+
+                    // this.contadorJogador += poder - 2
+                    // this.barraJogador += poder - 2
+
+
+
+                },
+
+
+                desistir() {
+                    location.reload(); // Recarrega a página
+
+                },
+                iniciar() {
+                    this.visible = !this.visible
+                    this.contadorJogador = 100
+                    this.contadorMostro = 100
+                    this.ataqueJogador = []
+                    this.ataqueMonstro = []
+
+
+
+                },
+                reiniciar() {
+                    location.reload(); // Recarrega a página
+
+                }
+
+            }
+
+        }).mount("#app")
+
+    </script>
+</body>
+
+</html>
+<style>
+    button {
+        margin: 5px;
+        width: 100%;
+        border-radius: 30px;
+    }
+
+    .iniciar {
+        width: 100px !important;
+    }
+</style>

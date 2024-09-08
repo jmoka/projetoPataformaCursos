@@ -46,17 +46,21 @@ export default {
           name: "Introdução",
           open: true,
           subItems: [
-            { id: 1, name: "O que é GraphQL?", page: "/GraphQL/M1_Introducao/oQueEGraphQL" },
-            { id: 2, name: "Instalação", page: "/GraphQL/M1_Introducao/instalacao" },
+            { id: 1, name: "GraphQL?", page: "/GraphQL/M1_Introducao/oQueEGraphQL" },
+            { id: 2, name: "Introdução", page: "/GraphQL/M1_Introducao/introducao" },
           ]
         },
         {
           id: 2,
-          name: "Consultas Básicas",
+          name: "Queries and Mutations",
           open: true,
           subItems: [
-            { id: 1, name: "Sintaxe Básica", page: "/GraphQL/M2_Consultas/sintaxeBasica" },
-            { id: 2, name: "Filtros e Argumentos", page: "/GraphQL/M2_Consultas/filtrosArgumentos" },
+            { id: 1, name: "Introducao", page: "/GraphQL/M2_Consultas_Mutation/queriesAndMutations" },
+            { id: 2, name: "Campos", page: "/GraphQL/M2_Consultas_Mutation/campos" },
+            { id: 3, name: "Argumentos", page: "/GraphQL/M2_Consultas_Mutation/argumentos" },
+            { id: 4, name: "Aliases", page: "/GraphQL/M2_Consultas_Mutation/aliases" },
+            { id: 5, name: "Fragmentos", page: "/GraphQL/M2_Consultas_Mutation/fragmentos" },
+            { id: 6, name: "Variaveis no Fragmentos", page: "/GraphQL/M2_Consultas_Mutation/variaveisFragmentos" },
           ]
         },
         {

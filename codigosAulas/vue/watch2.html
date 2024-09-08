@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Watch Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.47/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input v-model="user.name" placeholder="Digite o nome">
+        <input v-model="user.age" type="number" placeholder="Digite a idade">
+        <p>Nome: {{ user.name }} | Idade: {{ user.age }}</p>
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    user: {
+                        name: '',
+                        age: 0
+                    }
+                };
+            },
+            watch: {
+                'user.name'(newName, oldName) {
+                    console.log(`Nome mudou de "${oldName}" para "${newName}"`);
+                },
+                'user.age'(newAge, oldAge) {
+                    console.log(`Idade mudou de "${oldAge}" para "${newAge}"`);
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+
+</html>

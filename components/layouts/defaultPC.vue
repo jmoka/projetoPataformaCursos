@@ -65,11 +65,14 @@ export default {
         { id: 5, name: "CSS", to: "/css" },
         { id: 6, name: "HTML", to: "/html" },
         { id: 7, name: "Node", to: "/node" },
-        { id: 8, name: "GraphQL", to: "/GraphQL" },
-        { id: 9, name: "Vue.js", to: "/vue" },
-        { id: 10, name: "Vuetify", to: "/vuetify" },
-        { id: 11, name: "Vuex", to: "/vuex" },
-        { id: 12, name: "Nuxt", to: "/nuxt" },
+        {
+          id: 9, name: "Vue.js", to: "/vue",
+          subItems: [
+            { id: 10, name: "Vuetify", to: "/vuetify" },
+            { id: 11, name: "Vuex", to: "/vuex" },
+            { id: 12, name: "Nuxt", to: "/nuxt" },
+          ],
+        },
         { id: 13, name: "Docker", to: "/docker" },
       ],
     };

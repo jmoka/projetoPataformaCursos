@@ -58,12 +58,15 @@
                 <li>Entrada de Dados</li>
                 <li>Concatenação</li>
                 <li>Interpolação</li>
+                <li>Script</li>
+                <li>Saida e Entrada de Dados</li>
+                <li>Declarações</li>
               </ul>
 
               <h2><strong>4. Estruturas de Controle</strong></h2>
               <ul>
                 <li>Condicionais (if, else, switch)</li>
-                <li>Laços de Repetição (for, while, do-while)</li>
+                <li>Laços de Repetição (for, for-in, for-of, while, do-while)</li>
                 <li>Controle de Fluxo (break, continue)</li>
               </ul>
 

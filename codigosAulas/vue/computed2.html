@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.47/dist/vue.global.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@3.1.3/dist/vuetify.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@3.1.3/dist/vuetify.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <button @Click="somar()">Somar 1</button>
+        <button @Click="subtrair()">Subtrai 1</button>
+
+        <button @Click="contar2++">Somar 2</button>
+
+        <br>
+        <div>Contador1: {{contar1}} | Contador2: {{contar2}} </div>
+        <p>{{resultado}}</p>
+
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+        const vuetify = Vuetify.createVuetify();
+
+        createApp({
+            data() {
+                return {
+                    contar1: 0,
+                    contar2: 0
+
+
+                };
+            },
+            methods: {
+                somar() {
+                    this.contar1++
+                    console.log("chamou somar");
+
+
+                },
+                subtrair() {
+                    this.contar1--
+                },
+                // SE RESULTADO FOR USANDO COMO METHODS -  TERÁ UMA REPETIÇÃO SEMPRE QUE FOR RENDERIZADO , SERA CARREGADO MESMO QUE NÃO TENHA NENHUMA AÇÃO
+                // TEM QUE SER COLOCADO EM COMPUT
+                // resultado() {
+                //     console.log("chamou resultado....");
+                //     return this.contar1 >= 3 ? "maior que 3" : "menor que 3"
+
+                // }
+            },
+            computed: {
+                resultado() {
+                    console.log("chamou resultado computed....");
+                    return this.contar1 >= 3 ? "maior que 3" : "menor que 3"
+                }
+
+            }
+
+        }).use(vuetify)
+            .mount('#app');
+    </script>
+</body>
+
+</html>
+
+<style>
+    button {
+        border: 2px black solid;
+        color: white;
+        background-color: dimgray;
+        margin: 5px;
+        padding: 5px;
+    }
+</style>

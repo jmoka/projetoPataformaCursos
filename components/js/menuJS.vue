@@ -82,6 +82,9 @@ export default {
             { id: 8, name: "Entrada de Dados", page: "/js/M3_SintaxeBasica/entradaDados" },
             { id: 9, name: "Concatenação ", page: "/js/M3_SintaxeBasica/concatenacao" },
             { id: 10, name: "Interpolacao ", page: "/js/M3_SintaxeBasica/interpolacao" },
+            { id: 11, name: "Script ", page: "/js/M3_SintaxeBasica/script" },
+            { id: 12, name: "Entrada e Saida ", page: "/js/M3_SintaxeBasica/saidaDados" },
+            { id: 12, name: "Declarações ", page: "/js/M3_SintaxeBasica/declaracoes" },
           ]
         },
         {

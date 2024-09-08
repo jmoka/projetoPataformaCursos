@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de getElementsByTagName</title>
+</head>
+
+<body>
+    <!-- Botão que chamará a função para alterar seu próprio texto -->
+    <button type="button" onclick='alterarTexto()'>Clique para Mudar1</button>
+    <button type="button" onclick='alterarTexto1()'>Clique para Mudar2</button>
+    <button type="button" onclick='alterarTexto2()'>Clique para Mudar3</button>
+    <button type="button" onclick='alterarTexto3()'>Trocar de Todos</button>
+
+    <script>
+
+
+        function alterarTexto() {
+            let botoes = document.getElementsByTagName("button");
+            // Modifica o texto do primeiro botão encontrado (índice 0)
+            botoes[0].innerText = "Texto Alterado!";
+
+
+        }
+        function alterarTexto1() {
+            let botoes = document.getElementsByTagName("button");
+
+            botoes[1].innerText = "Texto Alterado!";
+
+
+        }
+        function alterarTexto2() {
+            let botoes = document.getElementsByTagName("button");
+
+            botoes[2].innerText = "Texto Alterado!";
+
+        }
+
+        function alterarTexto3() {
+            let botoes = document.getElementsByTagName("button");
+            for (i = 0; i < botoes.length; i++) {
+                botoes[i].innerText = "trocou todos"
+
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js Toggle de Classes</title>
+    <!-- Importando Vue.js através do CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.5.10/dist/vuetify.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.5.10/dist/vuetify.js"></script>
+</head>
+
+<body>
+    <!-- Estrutura Vue -->
+    <div id="app">
+        <v-app>
+            <v-main>
+                <v-container>
+                    <v-btn @click="toggleClasse">Alterar Estilo</v-btn>
+                    <h1 :class="{ 'normal': !isInvertido, 'invertido': isInvertido }">Texto com Toggle de Classes</h1>
+                </v-container>
+            </v-main>
+        </v-app>
+    </div>
+    <!-- Script Vue -->
+    <script>
+
+        new Vue({
+            el: '#app',
+            vuetify: new Vuetify(),
+            data() {
+                return {
+                    isInvertido: false
+                }
+            },
+            methods: {
+                toggleClasse() {
+                    this.isInvertido = !this.isInvertido;
+                }
+            }
+        });
+    </script>
+    <!-- Estilo -->
+    <style>
+        .normal {
+            color: black;
+            background-color: white;
+        }
+
+        .invertido {
+            color: white;
+            background-color: black;
+        }
+    </style>
+</body>
+
+</html>

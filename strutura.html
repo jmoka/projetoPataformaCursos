@@ -1,0 +1,77 @@
+<template>
+    <v-app>
+        <!-- Menu de navegação lateral -->
+        <v-navigation-drawer app>
+            <MenuVue />
+        </v-navigation-drawer>
+
+        <!-- Card com conteúdo adicional -->
+        <v-card class="TextMenu">
+            <!-- Conteúdo adicional -->
+        </v-card>
+
+        <!-- Conteúdo principal -->
+        <v-main>
+            <div>
+                <h1>{{ msg }}</h1>
+            </div>
+
+            <!-- Container principal -->
+            <v-container fluid>
+                <v-row>
+                    <v-col cols="12">
+                        <!-- Introdução -->
+                        <p class="justificar">
+
+                        </p>
+
+                        <!-- Exemplo Básico de Watcher -->
+                        <h3>Exemplo Básico: Contador</h3>
+                        <p class="justificar">
+
+                        </p>
+                        ...
+            </v-container>
+
+            <!-- Vídeo explicativo -->
+            <v-container video>
+                <v-responsive :aspect-ratio="16 / 9">
+                    <iframe :src="video" :allow="propriedadesVideo" allowfullscreen></iframe>
+                </v-responsive>
+            </v-container>
+        </v-main>
+
+        <!-- Rodapé -->
+        <v-footer>
+            <Footer />
+        </v-footer>
+    </v-app>
+</template>
+
+<script>
+    import MenuVue from '~/components/vue/menuVue.vue'
+    import Footer from '@/components/footer_page.vue'
+
+    export default {
+        name: "Watchers",
+        data() {
+            return {
+                msg: "Watchers em Vue.js",
+                video: 'https://www.youtube.com/embed/VIDEO_ID', // Substitua VIDEO_ID pela ID real do vídeo
+                propriedadesVideo: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
+            };
+        },
+
+    }
+</script>
+
+<style scoped>
+    .video {
+        max-width: 70%;
+        max-height: 70%;
+    }
+
+    .justificar {
+        text-align: justify;
+    }
+</style>

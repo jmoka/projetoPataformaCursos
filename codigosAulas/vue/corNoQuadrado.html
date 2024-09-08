@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.47/dist/vue.global.js"></script>
+    <title>Toggle List Items</title>
+    <style>
+        .x {
+            border: 2px red solid;
+            margin: 5px;
+            width: 50px;
+            height: 50px;
+        }
+
+        .corRed {
+            background-color: red;
+        }
+
+        .corBlue {
+            background-color: blue;
+        }
+
+        .corYallow {
+            background-color: yellow;
+        }
+
+        .corRoxo {
+            background-color: blueviolet;
+        }
+
+        .borderGrande {
+            border: 5px yellow solid;
+        }
+
+        .paddingTeste {
+            padding: 10px;
+            margin: 20px;
+        }
+
+        .borderRadio {
+            border-radius: 50%;
+        }
+
+        #myList {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div id="myList">
+            <div class="x" @click="aplicar = !aplicar" :class="{ corRed:aplicar, corRoxo:!aplicar}"></div>
+
+            <div class="x" @click="aplicar2=!aplicar2" :style="aplicar2 ? style1 : style2"></div>
+            <div class="x" :style="style" :class="[class1, class2, 'borderRadio', {borderGrande:aplicar}]">
+            </div>
+            <div class="x" :style="{'background-color':'red'}"></div>
+            <div class="x" :style="{'background-color':cor}"></div>
+            <div class="x" :style="{backgroundColor:cor}"></div>
+            <div>
+                <p>escreva a cor</p>
+                <input type="text" v-model="cor">
+
+            </div>
+            <div>
+                <p>escolha o estilo= [corRed, corBlue, corYallow, corRoxo ]</p>
+                <input type="text" v-model="class1">
+            </div>
+
+            <div class="x" :style="meuStilo"></div>
+            <div>
+                <p>altere a largura</p>
+                <input type="text" v-model="largura">
+            </div>
+        </div>
+
+    </div>
+
+
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    cor: "",
+                    largura: 100,
+                    aplicar: true,
+                    aplicar2: false,
+                    class1: "corBlue",
+                    class2: "paddingTeste",
+                    style: { transform: "rotate(45deg)" },
+                    style1: { backgroundColor: "blue" },
+                    style2: { backgroundColor: "yellow" }
+                };
+            },
+            computed: {
+                meuStilo() {
+                    return {
+                        width: this.largura + "px"
+                    }
+
+                }
+            }
+        }).mount('#app'); </script>
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.47/dist/vue.global.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@3.1.3/dist/vuetify.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@3.1.3/dist/vuetify.js"></script>
+</head>
+
+<body>
+    <div id="app">
+
+        <v-container fluid>
+            <!-- Input de Texto -->
+            <v-row>
+                <v-col cols="12">
+                    <h3>Input de Texto</h3>
+                    <v-text-field v-model="textInput" label="Digite seu nome"></v-text-field>
+                    <p>Texto Digitado: {{ textInput }}</p>
+                </v-col>
+            </v-row>
+
+            <!-- Textarea -->
+            <v-row>
+                <v-col cols="12">
+                    <h3>Textarea</h3>
+                    <v-textarea v-model="textareaInput" label="Digite uma mensagem"></v-textarea>
+                    <p>Mensagem: {{ textareaInput }}</p>
+                </v-col>
+            </v-row>
+
+            <!-- Checkbox -->
+            <v-row>
+                <v-col cols="12">
+                    <h3>Checkbox</h3>
+                    <v-checkbox v-model="checkboxInput" label="Aceitar Termos e Condições"></v-checkbox>
+                    <p>Checkbox está {{ checkboxInput ? 'marcado' : 'desmarcado' }}</p>
+                </v-col>
+            </v-row>
+
+            <!-- Radio Buttons -->
+            <v-row>
+                <v-col cols="12">
+                    <h3>Radio Buttons</h3>
+                    <v-radio-group v-model="radioInput" column>
+                        <v-radio label="Opção A" value="A"></v-radio>
+                        <v-radio label="Opção B" value="B"></v-radio>
+                        <v-radio label="Opção C" value="C"></v-radio>
+                    </v-radio-group>
+                    <p>Opção Selecionada: {{ radioInput }}</p>
+                </v-col>
+            </v-row>
+
+            <!-- Select -->
+            <v-row>
+                <v-col cols="12">
+                    <h3>Select (Dropdown)</h3>
+                    <v-select v-model="selectInput" :items="options" label="Escolha uma opção"></v-select>
+                    <p>Opção Selecionada: {{ selectInput }}</p>
+                </v-col>
+            </v-row>
+
+            <!-- Range -->
+            <v-row>
+                <v-col cols="12">
+                    <h3>Range (Slider)</h3>
+                    <v-slider v-model="rangeInput" :max="100" label="Escolha um valor"></v-slider>
+                    <p>Valor Selecionado: {{ rangeInput }}</p>
+                </v-col>
+            </v-row>
+
+            <!-- Switch -->
+            <v-row>
+                <v-col cols="12">
+                    <h3>Switch</h3>
+                    <v-switch v-model="switchInput" label="Ativar notificações"></v-switch>
+                    <p>Notificações estão {{ switchInput ? 'ativadas' : 'desativadas' }}</p>
+                </v-col>
+            </v-row>
+
+            <!-- Input de Senha -->
+            <v-row>
+                <v-col cols="12">
+                    <h3>Input de Senha</h3>
+                    <v-text-field v-model="passwordInput" label="Digite sua senha" type="password"></v-text-field>
+                    <p>Senha: {{ passwordInput }}</p>
+                </v-col>
+            </v-row>
+
+            <!-- Input de Data -->
+            <v-row>
+                <v-col cols="12">
+                    <h3>Input de Data</h3>
+                    <v-text-field v-model="dateInput" label="Escolha uma data" type="date"></v-text-field>
+                    <p>Data Selecionada: {{ dateInput }}</p>
+                </v-col>
+            </v-row>
+
+        </v-container>
+
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+        const vuetify = Vuetify.createVuetify();
+
+        createApp({
+            data() {
+                return {
+                    textInput: '', // Input de Texto
+                    textareaInput: '', // Textarea
+                    checkboxInput: false, // Checkbox
+                    radioInput: '', // Radio Buttons
+                    selectInput: '', // Select Dropdown
+                    rangeInput: 0, // Range Slider
+                    switchInput: false, // Switch
+                    passwordInput: '', // Input de Senha
+                    dateInput: '', // Input de Data
+                    options: ['Opção 1', 'Opção 2', 'Opção 3'] // Opções do Select
+                }
+            },
+
+
+        }).use(vuetify)
+            .mount('#app');
+    </script>
+</body>
+
+</html>
